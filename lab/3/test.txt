@@ -1,0 +1,149 @@
+rectangles
+--------------------------------
+Rectangle: 1,2--5,2
+Points inside:
+Rectangle: 5,6--6,6
+Points inside:
+Rectangle: 2,1--4,1
+Points inside:
+
+test points
+--------------------------------
+point 1: 1    1   
+point 2: 2    2   
+point 3: 3    3   
+point 4: 4    4   
+point 5: 5    5   
+point 6: 6    6   
+point 7: 5    6   
+point 8: 5.5  6.6 
+point 9: 3    6.5 
+---------------------------------
+testing is_point_within function
+---------------------------------
+point 1 is within rectangle 1
+point 2 is within rectangle 1
+point 3 is within rectangle 1
+point 4 is within rectangle 1
+point 5 is within rectangle 1
+point 6 is within rectangle 1
+point 7 is within rectangle 1
+point 8 is within rectangle 1
+point 9 is within rectangle 1
+point 1 is within rectangle 2
+point 2 is within rectangle 2
+point 3 is within rectangle 2
+point 4 is within rectangle 2
+point 5 is within rectangle 2
+point 6 is within rectangle 2
+point 7 is within rectangle 2
+point 8 is within rectangle 2
+point 9 is within rectangle 2
+point 1 is within rectangle 3
+point 2 is within rectangle 3
+point 3 is within rectangle 3
+point 4 is within rectangle 3
+point 5 is within rectangle 3
+point 6 is within rectangle 3
+point 7 is within rectangle 3
+point 8 is within rectangle 3
+point 9 is within rectangle 3
+---------------------------------
+testing add_point function
+---------------------------------
+point 1 was added to rectangle 1
+point 2 was added to rectangle 1
+point 3 was added to rectangle 1
+point 4 was added to rectangle 1
+point 5 was added to rectangle 1
+point 6 was added to rectangle 1
+point 7 was added to rectangle 1
+point 8 was added to rectangle 1
+point 9 was added to rectangle 1
+point 1 was added to rectangle 2
+point 2 was added to rectangle 2
+point 3 was added to rectangle 2
+point 4 was added to rectangle 2
+point 5 was added to rectangle 2
+point 6 was added to rectangle 2
+point 7 was added to rectangle 2
+point 8 was added to rectangle 2
+point 9 was added to rectangle 2
+point 1 was added to rectangle 3
+point 2 was added to rectangle 3
+point 3 was added to rectangle 3
+point 4 was added to rectangle 3
+point 5 was added to rectangle 3
+point 6 was added to rectangle 3
+point 7 was added to rectangle 3
+point 8 was added to rectangle 3
+point 9 was added to rectangle 3
+---------------------------------
+printing updated rectangles
+---------------------------------
+Rectangle: 1,2--5,2
+Points inside:
+1,1
+2,2
+3,3
+4,4
+5,5
+6,6
+5,6
+5.5,6.6
+3,6.5
+Rectangle: 5,6--6,6
+Points inside:
+1,1
+2,2
+3,3
+4,4
+5,5
+6,6
+5,6
+5.5,6.6
+3,6.5
+Rectangle: 2,1--4,1
+Points inside:
+1,1
+2,2
+3,3
+4,4
+5,5
+6,6
+5,6
+5.5,6.6
+3,6.5
+---------------------------------
+testing points_in_both function
+---------------------------------
+points in both rectangle 1 and 2
+1   1   
+2   2   
+3   3   
+4   4   
+5   5   
+6   6   
+5   6   
+5.5 6.6 
+3   6.5 
+points in both rectangle 1 and 3
+1   1   
+2   2   
+3   3   
+4   4   
+5   5   
+6   6   
+5   6   
+5.5 6.6 
+3   6.5 
+points in both rectangle 2 and 3
+1   1   
+2   2   
+3   3   
+4   4   
+5   5   
+6   6   
+5   6   
+5.5 6.6 
+3   6.5 

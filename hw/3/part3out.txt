@@ -1,0 +1,352 @@
+-----------------------------------
+STACK BEFORE FUNCTION DISTANCE
+-----------------------------------------
+         location: 0xbffa27bc  garbage or float? 
+         location: 0xbffa27b8  garbage or float? 
+         location: 0xbffa27b4  garbage or float? 
+         location: 0xbffa27b0  VALUE:   0
+         location: 0xbffa27ac  garbage or float? 
+% change location: 0xbffa27a8  VALUE:   0
+         location: 0xbffa27a4  POINTER: 0xbffa2720
+         location: 0xbffa27a0  VALUE:   0
+         location: 0xbffa279c  garbage or float? 
+         location: 0xbffa2798  VALUE:   0
+         location: 0xbffa2794  VALUE:   0
+         location: 0xbffa2790  VALUE:   0
+         location: 0xbffa278c  VALUE:   0
+         location: 0xbffa2788  VALUE:   0
+         location: 0xbffa2784  VALUE:   0
+         location: 0xbffa2780  VALUE:   93
+         location: 0xbffa277c  garbage or float? 
+         location: 0xbffa2778  garbage or float? 
+         location: 0xbffa2774  VALUE:   0
+         location: 0xbffa2770  VALUE:   101
+         location: 0xbffa276c  garbage or float? 
+         location: 0xbffa2768  garbage or float? 
+         location: 0xbffa2764  VALUE:   0
+         location: 0xbffa2760  VALUE:   0
+         location: 0xbffa275c  VALUE:   0
+         location: 0xbffa2758  garbage or float? 
+         location: 0xbffa2754  VALUE:   0
+         location: 0xbffa2750  VALUE:   0
+         location: 0xbffa274c  VALUE:   0
+         location: 0xbffa2748  VALUE:   0
+         location: 0xbffa2744  VALUE:   0
+         location: 0xbffa2740  VALUE:   0
+         location: 0xbffa273c  VALUE:   0
+         location: 0xbffa2738  VALUE:   0
+         location: 0xbffa2734  VALUE:   0
+         location: 0xbffa2730  VALUE:   0
+         location: 0xbffa272c  VALUE:   0
+         location: 0xbffa2728  VALUE:   0
+         location: 0xbffa2724  VALUE:   0
+         location: 0xbffa2720  VALUE:   0
+         location: 0xbffa271c  garbage or float? 
+         location: 0xbffa2718  POINTER: 0xbffa2768
+         location: 0xbffa2714  VALUE:   0
+         location: 0xbffa2710  VALUE:   0
+         location: 0xbffa270c  VALUE:   210
+         location: 0xbffa2708  VALUE:   0
+         location: 0xbffa2704  VALUE:   0
+         location: 0xbffa2700  VALUE:   180
+         location: 0xbffa26fc  VALUE:   0
+         location: 0xbffa26f8  VALUE:   45
+         location: 0xbffa26f4  VALUE:   150
+         location: 0xbffa26f0  VALUE:   0
+         location: 0xbffa26ec  VALUE:   45
+         location: 0xbffa26e8  VALUE:   60
+         location: 0xbffa26e4  VALUE:   0
+         location: 0xbffa26e0  VALUE:   90
+         location: 0xbffa26dc  VALUE:   30
+         location: 0xbffa26d8  VALUE:   0
+         location: 0xbffa26d4  VALUE:   75
+input[0] location: 0xbffa26d0  VALUE:   0
+         location: 0xbffa26cc  VALUE:   0
+         location: 0xbffa26c8  VALUE:   31
+         location: 0xbffa26c4  garbage or float? 
+         location: 0xbffa26c0  garbage or float? 
+         location: 0xbffa26bc  garbage or float? 
+-----------------------------------------
+STACK AFTER FUNCTION DISTANCE
+-----------------------------------------
+         location: 0xbffa27bc  garbage or float? 
+         location: 0xbffa27b8  garbage or float? 
+         location: 0xbffa27b4  garbage or float? 
+         location: 0xbffa27b0  VALUE:   0
+         location: 0xbffa27ac  garbage or float? 
+% change location: 0xbffa27a8  VALUE:   0
+         location: 0xbffa27a4  POINTER: 0xbffa2720
+         location: 0xbffa27a0  VALUE:   0
+         location: 0xbffa279c  garbage or float? 
+         location: 0xbffa2798  VALUE:   0
+         location: 0xbffa2794  VALUE:   0
+         location: 0xbffa2790  VALUE:   0
+         location: 0xbffa278c  VALUE:   0
+         location: 0xbffa2788  VALUE:   0
+         location: 0xbffa2784  VALUE:   0
+         location: 0xbffa2780  VALUE:   93
+         location: 0xbffa277c  garbage or float? 
+         location: 0xbffa2778  garbage or float? 
+         location: 0xbffa2774  VALUE:   0
+         location: 0xbffa2770  VALUE:   101
+         location: 0xbffa276c  garbage or float? 
+         location: 0xbffa2768  garbage or float? 
+         location: 0xbffa2764  VALUE:   0
+         location: 0xbffa2760  VALUE:   0
+         location: 0xbffa275c  VALUE:   0
+         location: 0xbffa2758  garbage or float? 
+         location: 0xbffa2754  VALUE:   0
+         location: 0xbffa2750  VALUE:   0
+         location: 0xbffa274c  VALUE:   0
+         location: 0xbffa2748  VALUE:   0
+         location: 0xbffa2744  VALUE:   0
+         location: 0xbffa2740  VALUE:   0
+         location: 0xbffa273c  VALUE:   0
+         location: 0xbffa2738  VALUE:   0
+         location: 0xbffa2734  VALUE:   0
+         location: 0xbffa2730  VALUE:   0
+         location: 0xbffa272c  VALUE:   0
+         location: 0xbffa2728  VALUE:   0
+         location: 0xbffa2724  VALUE:   0
+         location: 0xbffa2720  VALUE:   0
+         location: 0xbffa271c  garbage or float? 
+         location: 0xbffa2718  POINTER: 0xbffa2768
+         location: 0xbffa2714  VALUE:   423
+         location: 0xbffa2710  VALUE:   0
+         location: 0xbffa270c  VALUE:   210
+         location: 0xbffa2708  VALUE:   763
+         location: 0xbffa2704  VALUE:   0
+         location: 0xbffa2700  VALUE:   180
+         location: 0xbffa26fc  VALUE:   1270
+         location: 0xbffa26f8  VALUE:   45
+         location: 0xbffa26f4  VALUE:   150
+         location: 0xbffa26f0  VALUE:   763
+         location: 0xbffa26ec  VALUE:   45
+         location: 0xbffa26e8  VALUE:   60
+         location: 0xbffa26e4  VALUE:   473
+         location: 0xbffa26e0  VALUE:   90
+         location: 0xbffa26dc  VALUE:   30
+         location: 0xbffa26d8  VALUE:   0
+         location: 0xbffa26d4  VALUE:   75
+input[0] location: 0xbffa26d0  VALUE:   0
+         location: 0xbffa26cc  VALUE:   0
+         location: 0xbffa26c8  VALUE:   30
+         location: 0xbffa26c4  garbage or float? 
+         location: 0xbffa26c0  garbage or float? 
+         location: 0xbffa26bc  garbage or float? 
+-----------------------------------------
+PRINTED STACK
+-----------------------------
+ORIGINAL
+  x-pos   y-pos   ft/min  min/mile
+      0      75        0       N/A
+     30      90      473     11:09
+     60      45      763      6:55
+    150      45     1270      4:09
+    180       0      763      6:55
+    210       0      423     12:28
+-----------------------------------
+STACK BEFORE FUNCTION FILTER (redundant)
+-----------------------------------------
+            location: 0xbffa27bc  garbage or float? 
+            location: 0xbffa27b8  garbage or float? 
+            location: 0xbffa27b4  garbage or float? 
+            location: 0xbffa27b0  VALUE:   0
+            location: 0xbffa27ac  garbage or float? 
+   % change location: 0xbffa27a8  VALUE:   0
+            location: 0xbffa27a4  POINTER: 0xbffa2720
+            location: 0xbffa27a0  garbage or float? 
+            location: 0xbffa279c  garbage or float? 
+            location: 0xbffa2798  VALUE:   0
+            location: 0xbffa2794  VALUE:   0
+            location: 0xbffa2790  garbage or float? 
+            location: 0xbffa278c  VALUE:   11
+            location: 0xbffa2788  VALUE:   17
+            location: 0xbffa2784  VALUE:   0
+            location: 0xbffa2780  VALUE:   93
+            location: 0xbffa277c  garbage or float? 
+            location: 0xbffa2778  garbage or float? 
+            location: 0xbffa2774  VALUE:   0
+            location: 0xbffa2770  VALUE:   101
+            location: 0xbffa276c  garbage or float? 
+            location: 0xbffa2768  garbage or float? 
+            location: 0xbffa2764  VALUE:   0
+            location: 0xbffa2760  VALUE:   0
+            location: 0xbffa275c  VALUE:   0
+            location: 0xbffa2758  garbage or float? 
+            location: 0xbffa2754  VALUE:   0
+            location: 0xbffa2750  garbage or float? 
+            location: 0xbffa274c  VALUE:   0
+            location: 0xbffa2748  garbage or float? 
+            location: 0xbffa2744  VALUE:   0
+            location: 0xbffa2740  garbage or float? 
+            location: 0xbffa273c  VALUE:   0
+            location: 0xbffa2738  VALUE:   0
+            location: 0xbffa2734  VALUE:   0
+            location: 0xbffa2730  VALUE:   0
+            location: 0xbffa272c  VALUE:   0
+            location: 0xbffa2728  VALUE:   0
+            location: 0xbffa2724  VALUE:   0
+            location: 0xbffa2720  VALUE:   0
+            location: 0xbffa271c  garbage or float? 
+            location: 0xbffa2718  POINTER: 0xbffa2768
+            location: 0xbffa2714  VALUE:   423
+            location: 0xbffa2710  VALUE:   0
+            location: 0xbffa270c  VALUE:   210
+            location: 0xbffa2708  VALUE:   763
+            location: 0xbffa2704  VALUE:   0
+            location: 0xbffa2700  VALUE:   180
+            location: 0xbffa26fc  VALUE:   1270
+            location: 0xbffa26f8  VALUE:   45
+            location: 0xbffa26f4  VALUE:   150
+            location: 0xbffa26f0  VALUE:   763
+            location: 0xbffa26ec  VALUE:   45
+            location: 0xbffa26e8  VALUE:   60
+            location: 0xbffa26e4  VALUE:   473
+            location: 0xbffa26e0  VALUE:   90
+            location: 0xbffa26dc  VALUE:   30
+            location: 0xbffa26d8  VALUE:   0
+            location: 0xbffa26d4  VALUE:   75
+   input[0] location: 0xbffa26d0  VALUE:   0
+            location: 0xbffa26cc  VALUE:   0
+            location: 0xbffa26c8  VALUE:   8
+            location: 0xbffa26c4  VALUE:   0
+            location: 0xbffa26c0  VALUE:   0
+            location: 0xbffa26bc  VALUE:   0
+            location: 0xbffa26b8  VALUE:   0
+            location: 0xbffa26b4  VALUE:   0
+            location: 0xbffa26b0  VALUE:   0
+            location: 0xbffa26ac  VALUE:   0
+            location: 0xbffa26a8  VALUE:   0
+            location: 0xbffa26a4  VALUE:   0
+            location: 0xbffa26a0  VALUE:   0
+            location: 0xbffa269c  VALUE:   0
+            location: 0xbffa2698  VALUE:   0
+            location: 0xbffa2694  VALUE:   0
+            location: 0xbffa2690  VALUE:   0
+            location: 0xbffa268c  VALUE:   0
+            location: 0xbffa2688  VALUE:   0
+            location: 0xbffa2684  VALUE:   0
+filtered[0] location: 0xbffa2680  VALUE:   0
+            location: 0xbffa267c  garbage or float? 
+            location: 0xbffa2678  POINTER: 0xbffa26b8
+            location: 0xbffa2674  VALUE:   0
+            location: 0xbffa2670  VALUE:   0
+            location: 0xbffa266c  VALUE:   0
+-----------------------------------------
+STACK AFTER FUNCTION FILTER
+-----------------------------------------
+            location: 0xbffa27bc  garbage or float? 
+            location: 0xbffa27b8  garbage or float? 
+            location: 0xbffa27b4  garbage or float? 
+            location: 0xbffa27b0  VALUE:   0
+            location: 0xbffa27ac  garbage or float? 
+   % change location: 0xbffa27a8  VALUE:   0
+            location: 0xbffa27a4  POINTER: 0xbffa2720
+            location: 0xbffa27a0  garbage or float? 
+            location: 0xbffa279c  garbage or float? 
+            location: 0xbffa2798  VALUE:   0
+            location: 0xbffa2794  VALUE:   0
+            location: 0xbffa2790  garbage or float? 
+            location: 0xbffa278c  VALUE:   11
+            location: 0xbffa2788  VALUE:   17
+            location: 0xbffa2784  VALUE:   0
+            location: 0xbffa2780  VALUE:   93
+            location: 0xbffa277c  garbage or float? 
+            location: 0xbffa2778  garbage or float? 
+            location: 0xbffa2774  VALUE:   0
+            location: 0xbffa2770  VALUE:   101
+            location: 0xbffa276c  garbage or float? 
+            location: 0xbffa2768  garbage or float? 
+            location: 0xbffa2764  VALUE:   0
+            location: 0xbffa2760  VALUE:   0
+            location: 0xbffa275c  VALUE:   0
+            location: 0xbffa2758  garbage or float? 
+            location: 0xbffa2754  VALUE:   0
+            location: 0xbffa2750  garbage or float? 
+            location: 0xbffa274c  VALUE:   0
+            location: 0xbffa2748  garbage or float? 
+            location: 0xbffa2744  VALUE:   0
+            location: 0xbffa2740  garbage or float? 
+            location: 0xbffa273c  VALUE:   0
+            location: 0xbffa2738  garbage or float? 
+            location: 0xbffa2734  VALUE:   0
+            location: 0xbffa2730  VALUE:   0
+            location: 0xbffa272c  VALUE:   0
+            location: 0xbffa2728  VALUE:   0
+            location: 0xbffa2724  VALUE:   0
+            location: 0xbffa2720  VALUE:   0
+            location: 0xbffa271c  garbage or float? 
+            location: 0xbffa2718  POINTER: 0xbffa2768
+            location: 0xbffa2714  VALUE:   423
+            location: 0xbffa2710  VALUE:   0
+            location: 0xbffa270c  VALUE:   210
+            location: 0xbffa2708  VALUE:   763
+            location: 0xbffa2704  VALUE:   0
+            location: 0xbffa2700  VALUE:   180
+            location: 0xbffa26fc  VALUE:   1270
+            location: 0xbffa26f8  VALUE:   45
+            location: 0xbffa26f4  VALUE:   150
+            location: 0xbffa26f0  VALUE:   763
+            location: 0xbffa26ec  VALUE:   45
+            location: 0xbffa26e8  VALUE:   60
+            location: 0xbffa26e4  VALUE:   473
+            location: 0xbffa26e0  VALUE:   90
+            location: 0xbffa26dc  VALUE:   30
+            location: 0xbffa26d8  VALUE:   0
+            location: 0xbffa26d4  VALUE:   75
+   input[0] location: 0xbffa26d0  VALUE:   0
+            location: 0xbffa26cc  VALUE:   0
+            location: 0xbffa26c8  VALUE:   8
+            location: 0xbffa26c4  VALUE:   473
+            location: 0xbffa26c0  VALUE:   0
+            location: 0xbffa26bc  VALUE:   210
+            location: 0xbffa26b8  VALUE:   736
+            location: 0xbffa26b4  VALUE:   15
+            location: 0xbffa26b0  VALUE:   180
+            location: 0xbffa26ac  VALUE:   823
+            location: 0xbffa26a8  VALUE:   30
+            location: 0xbffa26a4  VALUE:   130
+            location: 0xbffa26a0  VALUE:   719
+            location: 0xbffa269c  VALUE:   60
+            location: 0xbffa2698  VALUE:   80
+            location: 0xbffa2694  VALUE:   429
+            location: 0xbffa2690  VALUE:   70
+            location: 0xbffa268c  VALUE:   30
+            location: 0xbffa2688  VALUE:   0
+            location: 0xbffa2684  VALUE:   75
+filtered[0] location: 0xbffa2680  VALUE:   0
+            location: 0xbffa267c  garbage or float? 
+            location: 0xbffa2678  POINTER: 0xbffa26b8
+            location: 0xbffa2674  VALUE:   0
+            location: 0xbffa2670  VALUE:   0
+            location: 0xbffa266c  VALUE:   0
+-----------------------------------------
+PRINTED STACK
+-----------------------------
+FILTERED
+  x-pos   y-pos   ft/min  min/mile
+      0      75        0       N/A
+     30      70      429     12:18
+     80      60      719      7:20
+    130      30      823      6:24
+    180      15      736      7:10
+    210       0      473     11:09
+-----------------------------------
+RECURSE 13.85% change
+  x-pos   y-pos   ft/min  min/mile
+      0      75        0       N/A
+     30      70      429     12:18
+     80      60      719      7:20
+    130      30      823      6:24
+    180      15      736      7:10
+    210       0      473     11:09
+RECURSE  0.80% change
+  x-pos   y-pos   ft/min  min/mile
+      0      75        0       N/A
+     36      68      517     10:12
+     80      53      656      8:02
+    130      35      750      7:02
+    173      15      669      7:53
+    210       0      563      9:22
+RECURSE  0.14% change

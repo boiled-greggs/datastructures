@@ -1,0 +1,25 @@
+INTERESTING STAT IDEAS:
+  see if anyone got best scores but not best overall (this is something that happens in statistics)
+
+  you can win the decathlon  without finishing first in any particular event. 
+
+TO DO:
+  pick interesting stat
+  decide how to code interesting stat
+  code the interesting stat
+
+  COMMENT CODE
+  MAKE SURE ARGUMENT ERRORS ARE ALL THERE AND CORRECT
+
+
+find people who scored better overall than they did in any one event
+
+new member variable (vector of ints) to keep track of highest place in each event
+may have to make new sort function to sort by event points, then set the place in the event_place vector to that index
+new member variable (int overall_place) sort by points to find overall place
+
+if overall_place > any_event_place
+  write out
+
+god willing someone will have something to write out
+

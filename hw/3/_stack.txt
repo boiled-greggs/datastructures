@@ -1,0 +1,62 @@
+size of intptr_t: 4
+localvar address: 0xbff1298c
+x address: 0xbff12910
+a address: 0xbff12934
+y address: 0xbff12914
+z address: 0xbff12918
+-----------------------------------------
+                location: 0xbff129c0  garbage or float? 
+                location: 0xbff129bc  POINTER: 0xbff12a6c
+                location: 0xbff129b8  POINTER: 0xbff129ec
+                location: 0xbff129b4  POINTER: 0xbff129e4
+                location: 0xbff129b0  VALUE:   1
+ return address location: 0xbff129ac  CODE: 0xa152f395
+  FUNCTION MAIN location: 0xbff129a8  POINTER: 0xbff129dc
+                location: 0xbff129a4  POINTER: 0xbff12a6c
+                location: 0xbff129a0  VALUE:   0
+                location: 0xbff1299c  VALUE:   0
+                location: 0xbff12998  garbage or float? 
+                location: 0xbff12994  VALUE:   13
+                location: 0xbff12990  garbage or float? 
+       localvar location: 0xbff1298c  VALUE:   2017
+                location: 0xbff12988  garbage or float? 
+                location: 0xbff12984  garbage or float? 
+                location: 0xbff12980  VALUE:   114
+                location: 0xbff1297c  garbage or float? 
+                location: 0xbff12978  garbage or float? 
+                location: 0xbff12974  POINTER: 0xbff12a6c
+                location: 0xbff12970  POINTER: 0xbff129ec
+                location: 0xbff1296c  POINTER: 0xbff129e4
+                location: 0xbff12968  VALUE:   18
+                location: 0xbff12964  VALUE:   1863
+                location: 0xbff12960  VALUE:   1776
+ return address location: 0xbff1295c  CODE: 0xf029f
+FUNCTION HELPER location: 0xbff12958  POINTER: 0xbff129a8  ----> FUNCTION MAIN
+                location: 0xbff12954  VALUE:   10
+                location: 0xbff12950  POINTER: 0xbff12990
+                location: 0xbff1294c  garbage or float? 
+                location: 0xbff12948  garbage or float? 
+           a[4] location: 0xbff12944  VALUE:   14
+                location: 0xbff12940  VALUE:   13
+                location: 0xbff1293c  VALUE:   12
+                location: 0xbff12938  VALUE:   11
+           a[0] location: 0xbff12934  VALUE:   10
+                location: 0xbff12930  garbage or float? 
+                location: 0xbff1292c  garbage or float? 
+                location: 0xbff12928  garbage or float? 
+                location: 0xbff12924  VALUE:   15
+                location: 0xbff12920  VALUE:   17
+                location: 0xbff1291c  garbage or float? 
+              z location: 0xbff12918  VALUE:   98
+              y location: 0xbff12914  POINTER: 0xbff12910  ----> x
+              x location: 0xbff12910  VALUE:   72
+                location: 0xbff1290c  garbage or float? 
+                location: 0xbff12908  garbage or float? 
+         param2 location: 0xbff12904  VALUE:   1863
+         param1 location: 0xbff12900  VALUE:   1776
+                location: 0xbff128fc  garbage or float? 
+                location: 0xbff128f8  VALUE:   0
+                location: 0xbff128f4  VALUE:   0
+                location: 0xbff128f0  garbage or float? 
+                location: 0xbff128ec  garbage or float? 
+-----------------------------------------

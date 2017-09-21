@@ -1,0 +1,23 @@
+[x] have letters separated into vector
+
+figure out what letter[i] is
+  known:
+    two characters in making each letter
+    one is foreground, one background
+    don't know which is which
+  options:
+    create a new letter to copy current letter
+    find which two characters make up the letter
+      > these can be found during original letter making
+    change one character to '#' and other to '.' in letter
+    check against all bitmap_letters
+      if nothing returned, switch '#' and '.' and try again
+    return index of bitmap_letters letter
+    append char@index to string messageåk
+
+other option:
+  create string of size (output letters size) with placeholders
+  iterate through bitmap_letter
+    for each letter check if replacing characters 2 simple_font characters gives match
+    if no match for first replacement, replace the other way
+    if letter is a match to a bitmap letter, replace string character at index of output_letter to character matching with index of bitmap_letter

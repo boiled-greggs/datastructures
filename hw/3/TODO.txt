@@ -1,0 +1,18 @@
+for part1
+[ ] add comments
+
+for part2
+[ ] do the rest of the drawings
+
+part3
+[ ] for distance function – pass different n value
+[ ] for filter function – make arrays different sizes
+[ ] write in README the results, including output snippets ( exaggerate errors )
+
+part4
+[ ] pass by value 'n' vs pass by reference 'avg_vfdjknalv'
+[ ] write in README
+
+part5
+[ ] make sure the right things ( tmp[] ) are being printed
+[ ] add thoughts to README
