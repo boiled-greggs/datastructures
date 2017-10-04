@@ -1,0 +1,53 @@
+FUNCTIONS NEEDED:
+  for accessing / modifying
+    numElements
+    numBins
+    numElementsInBin
+    getElement
+    isPacked
+
+    addElement
+    removeElement
+    clear
+
+How it Works
+  the jagged array is initialized with a number of bins and 0 elements.
+
+
+To Do:
+  [x] write pack
+  [x]   need getElements etc cases for packed array
+  
+  [x] write unpack
+  [x] write removeElement
+  [x] write clear
+  [x] amend print function for packed
+
+  [ ] write errors
+    [ ] invalid bin numbers
+    [ ] modifying when packed
+    
+
+  [x] write assignment operator
+  [x] write copy constructor
+
+  [ ] write test cases
+    [ ] floats (probs modify print function
+    [x] ints
+    [x] short strings
+    [ ] no elements
+    [ ] elements in every bin
+    [ ] maybe check if type element added is correct?
+    [ ] copying large jagged array
+    [ ] assigning large jagged array
+    [ ] unpack and pack large arrays, more times.
+    [x] adding element to nonexistent bin, removing
+    [ ] getting nonexistant elements, numelementsinbin
+    [ ] check on lms for more ideas
+  
+  [ ] more tests
+  [x] batch test
+  
+  [ ] ORDER NOTATION
+
+  [ ] comments

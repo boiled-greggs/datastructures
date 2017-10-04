@@ -50,9 +50,9 @@ void print_pace(intptr_t avg_speed) {
     std::cout << "N/A";
   } else {
     std::stringstream pace_out;
-    double pace = 1/double(avg_speed)*feet_per_mile;
-    intptr_t min = intptr_t(pace);
-    intptr_t sec = intptr_t((pace - intptr_t(pace))*60);
+    double pace = 1/double(avg_speed)*feet_per_mile;// convert
+    intptr_t min = intptr_t(pace); // rounds down so this is the minutes of the pace
+    intptr_t sec = intptr_t((pace - intptr_t(pace))*60); // subtract minutes from total pace and convert
     pace_out << min << ":" << std::setfill('0') << std::setw(2) << sec;
     std::cout << pace_out.str();
   }
@@ -69,6 +69,9 @@ void print(GPSData data[], intptr_t n) {
 
 
 double distance(GPSData data[], intptr_t n, intptr_t &avg_feet_per_minute) {
+  // uses pythagorean thm to get distance for each of path, then finds speed by using
+  // the time between samples. then, finds average speed from total distance and
+  // returns total distance.
   thestack.set_label((intptr_t*)__builtin_frame_address(0),"FUNCTION DISTANCE");
   thestack.tag_return_address((intptr_t*)(__builtin_frame_address(0))+1);
   thestack.set_label((intptr_t*)&data[0], "data[0]");
@@ -90,6 +93,10 @@ double distance(GPSData data[], intptr_t n, intptr_t &avg_feet_per_minute) {
 }
 
 double filter(GPSData input[], GPSData output[], intptr_t n) {
+  // sets initial and final data objects, then loops through the rest to find
+  // the averaged new positions from input[], which are then set in output.
+  // finally, sends both to distance to get new and old pathlength, then
+  // uses results to get the percent change.
   output[0].set_position(input[0].get_x(), input[0].get_y());
   output[0].set_speed(input[0].get_s());
   output[n-1].set_position(input[n-1].get_x(), input[n-1].get_y());

@@ -1,0 +1,393 @@
+-----------------------------------
+recurive filter stack
+-----------------------------------------
+                          location: 0xbffa0700  garbage or float? 
+                          location: 0xbffa06fc  VALUE:   0
+                          location: 0xbffa06f8  VALUE:   6
+                          location: 0xbffa06f4  POINTER: 0xbffa0710
+                          location: 0xbffa06f0  POINTER: 0xbffa0760
+           return address location: 0xbffa06ec  CODE: 0x622b7
+FUNCTION RECURSIVE_FILTER location: 0xbffa06e8  POINTER: 0xbffa09c8
+                          location: 0xbffa06e4  VALUE:   10
+                          location: 0xbffa06e0  POINTER: 0xbffa0710
+                          location: 0xbffa06dc  garbage or float? 
+                          location: 0xbffa06d8  garbage or float? 
+                          location: 0xbffa06d4  POINTER: 0xbffa065c  ----> tmp[n-1]
+                          location: 0xbffa06d0  POINTER: 0xbffa06e0
+                          location: 0xbffa06cc  garbage or float? 
+                          location: 0xbffa06c8  POINTER: 0xbffa06f8
+                          location: 0xbffa06c4  garbage or float? 
+                          location: 0xbffa06c0  POINTER: 0xbffa0710
+                          location: 0xbffa06bc  garbage or float? 
+                          location: 0xbffa06b8  garbage or float? 
+                          location: 0xbffa06b4  garbage or float? 
+                          location: 0xbffa06b0  garbage or float? 
+                          location: 0xbffa06ac  POINTER: 0xbffa06b0
+                          location: 0xbffa06a8  VALUE:   93
+                          location: 0xbffa06a4  garbage or float? 
+                          location: 0xbffa06a0  garbage or float? 
+                          location: 0xbffa069c  garbage or float? 
+                          location: 0xbffa0698  VALUE:   0
+                          location: 0xbffa0694  garbage or float? 
+                          location: 0xbffa0690  garbage or float? 
+                          location: 0xbffa068c  garbage or float? 
+                          location: 0xbffa0688  garbage or float? 
+                          location: 0xbffa0684  POINTER: 0xbffa06b0
+                          location: 0xbffa0680  garbage or float? 
+                          location: 0xbffa067c  VALUE:   25
+                          location: 0xbffa0678  VALUE:   33
+                          location: 0xbffa0674  VALUE:   1
+                          location: 0xbffa0670  garbage or float? 
+                          location: 0xbffa066c  garbage or float? 
+                          location: 0xbffa0668  POINTER: 0xbffa0678
+                          location: 0xbffa0664  VALUE:   0
+                          location: 0xbffa0660  VALUE:   0
+                 tmp[n-1] location: 0xbffa065c  VALUE:   0
+                          location: 0xbffa0658  VALUE:   0
+                          location: 0xbffa0654  VALUE:   0
+                          location: 0xbffa0650  VALUE:   0
+                          location: 0xbffa064c  VALUE:   0
+                          location: 0xbffa0648  VALUE:   0
+                          location: 0xbffa0644  VALUE:   0
+                          location: 0xbffa0640  VALUE:   0
+                          location: 0xbffa063c  VALUE:   0
+                          location: 0xbffa0638  VALUE:   0
+                          location: 0xbffa0634  VALUE:   0
+                          location: 0xbffa0630  VALUE:   0
+                          location: 0xbffa062c  VALUE:   0
+                          location: 0xbffa0628  VALUE:   0
+                          location: 0xbffa0624  VALUE:   0
+                   tmp[0] location: 0xbffa0620  VALUE:   0
+                          location: 0xbffa061c  garbage or float? 
+                          location: 0xbffa0618  VALUE:   22
+                          location: 0xbffa0614  garbage or float? 
+                          location: 0xbffa0610  garbage or float? 
+                          location: 0xbffa060c  garbage or float? 
+-----------------------------------------
+RECURSE 13.85% change
+  x-pos   y-pos   ft/min  min/mile
+      0      75        0       N/A
+     30      70      429     12:18
+     80      60      719      7:20
+    130      30      823      6:24
+    180      15      736      7:10
+    210       0      473     11:09
+recurive filter stack
+-----------------------------------------
+                          location: 0xbffa0700  garbage or float? 
+                          location: 0xbffa06fc  VALUE:   0
+                          location: 0xbffa06f8  VALUE:   6
+                          location: 0xbffa06f4  POINTER: 0xbffa0710
+                          location: 0xbffa06f0  POINTER: 0xbffa0760
+           return address location: 0xbffa06ec  CODE: 0x622b7
+FUNCTION RECURSIVE_FILTER location: 0xbffa06e8  POINTER: 0xbffa09c8
+                          location: 0xbffa06e4  VALUE:   10
+                          location: 0xbffa06e0  POINTER: 0xbffa0710
+                          location: 0xbffa06dc  garbage or float? 
+                          location: 0xbffa06d8  garbage or float? 
+                          location: 0xbffa06d4  POINTER: 0xbffa0620  ----> tmp[0]
+                          location: 0xbffa06d0  garbage or float? 
+                          location: 0xbffa06cc  garbage or float? 
+                          location: 0xbffa06c8  POINTER: 0xbffa06f8
+                          location: 0xbffa06c4  garbage or float? 
+                          location: 0xbffa06c0  POINTER: 0xbffa0710
+                          location: 0xbffa06bc  VALUE:   0
+                          location: 0xbffa06b8  VALUE:   0
+                          location: 0xbffa06b4  garbage or float? 
+                          location: 0xbffa06b0  garbage or float? 
+                          location: 0xbffa06ac  POINTER: 0xbffa06b0
+                          location: 0xbffa06a8  VALUE:   93
+                          location: 0xbffa06a4  garbage or float? 
+                          location: 0xbffa06a0  garbage or float? 
+                          location: 0xbffa069c  garbage or float? 
+                          location: 0xbffa0698  VALUE:   0
+                          location: 0xbffa0694  garbage or float? 
+                          location: 0xbffa0690  garbage or float? 
+                          location: 0xbffa068c  garbage or float? 
+                          location: 0xbffa0688  garbage or float? 
+                          location: 0xbffa0684  POINTER: 0xbffa06b0
+                          location: 0xbffa0680  garbage or float? 
+                          location: 0xbffa067c  VALUE:   25
+                          location: 0xbffa0678  garbage or float? 
+                          location: 0xbffa0674  garbage or float? 
+                          location: 0xbffa0670  garbage or float? 
+                          location: 0xbffa066c  garbage or float? 
+                          location: 0xbffa0668  POINTER: 0xbffa0678
+                          location: 0xbffa0664  VALUE:   473
+                          location: 0xbffa0660  VALUE:   0
+                 tmp[n-1] location: 0xbffa065c  VALUE:   210
+                          location: 0xbffa0658  VALUE:   736
+                          location: 0xbffa0654  VALUE:   15
+                          location: 0xbffa0650  VALUE:   180
+                          location: 0xbffa064c  VALUE:   823
+                          location: 0xbffa0648  VALUE:   30
+                          location: 0xbffa0644  VALUE:   130
+                          location: 0xbffa0640  VALUE:   719
+                          location: 0xbffa063c  VALUE:   60
+                          location: 0xbffa0638  VALUE:   80
+                          location: 0xbffa0634  VALUE:   429
+                          location: 0xbffa0630  VALUE:   70
+                          location: 0xbffa062c  VALUE:   30
+                          location: 0xbffa0628  VALUE:   0
+                          location: 0xbffa0624  VALUE:   75
+                   tmp[0] location: 0xbffa0620  VALUE:   0
+                          location: 0xbffa061c  garbage or float? 
+                          location: 0xbffa0618  VALUE:   8
+                          location: 0xbffa0614  VALUE:   6
+                          location: 0xbffa0610  garbage or float? 
+                          location: 0xbffa060c  VALUE:   0
+                          location: 0xbffa0608  VALUE:   6
+                          location: 0xbffa0604  POINTER: 0xbffa0710
+                          location: 0xbffa0600  POINTER: 0xbffa0620  ----> tmp[0]
+           return address location: 0xbffa05fc  CODE: 0x61c60
+FUNCTION RECURSIVE_FILTER location: 0xbffa05f8  POINTER: 0xbffa06e8  ----> FUNCTION RECURSIVE_FILTER
+                          location: 0xbffa05f4  POINTER: 0xbffa0620  ----> tmp[0]
+                          location: 0xbffa05f0  POINTER: 0xbffa0710
+                          location: 0xbffa05ec  VALUE:   6
+                          location: 0xbffa05e8  garbage or float? 
+                          location: 0xbffa05e4  POINTER: 0xbffa056c  ----> tmp[n-1]
+                          location: 0xbffa05e0  garbage or float? 
+                          location: 0xbffa05dc  garbage or float? 
+                          location: 0xbffa05d8  VALUE:   8
+                          location: 0xbffa05d4  VALUE:   10
+                          location: 0xbffa05d0  garbage or float? 
+                          location: 0xbffa05cc  garbage or float? 
+                          location: 0xbffa05c8  POINTER: 0xbffa0608
+                          location: 0xbffa05c4  garbage or float? 
+                          location: 0xbffa05c0  garbage or float? 
+                          location: 0xbffa05bc  POINTER: 0xbffa0664
+                          location: 0xbffa05b8  VALUE:   93
+                          location: 0xbffa05b4  garbage or float? 
+                          location: 0xbffa05b0  garbage or float? 
+                          location: 0xbffa05ac  garbage or float? 
+                          location: 0xbffa05a8  VALUE:   0
+                          location: 0xbffa05a4  garbage or float? 
+                          location: 0xbffa05a0  garbage or float? 
+                          location: 0xbffa059c  garbage or float? 
+                          location: 0xbffa0598  garbage or float? 
+                          location: 0xbffa0594  garbage or float? 
+                          location: 0xbffa0590  garbage or float? 
+                          location: 0xbffa058c  VALUE:   25
+                          location: 0xbffa0588  VALUE:   33
+                          location: 0xbffa0584  VALUE:   0
+                          location: 0xbffa0580  VALUE:   0
+                          location: 0xbffa057c  garbage or float? 
+                          location: 0xbffa0578  POINTER: 0xbffa0588
+                          location: 0xbffa0574  VALUE:   0
+                          location: 0xbffa0570  VALUE:   0
+                 tmp[n-1] location: 0xbffa056c  VALUE:   0
+                          location: 0xbffa0568  VALUE:   0
+                          location: 0xbffa0564  VALUE:   0
+                          location: 0xbffa0560  VALUE:   0
+                          location: 0xbffa055c  VALUE:   0
+                          location: 0xbffa0558  VALUE:   0
+                          location: 0xbffa0554  VALUE:   0
+                          location: 0xbffa0550  VALUE:   0
+                          location: 0xbffa054c  VALUE:   0
+                          location: 0xbffa0548  VALUE:   0
+                          location: 0xbffa0544  VALUE:   0
+                          location: 0xbffa0540  VALUE:   0
+                          location: 0xbffa053c  VALUE:   0
+                          location: 0xbffa0538  VALUE:   0
+                          location: 0xbffa0534  VALUE:   0
+                   tmp[0] location: 0xbffa0530  VALUE:   0
+                          location: 0xbffa052c  garbage or float? 
+                          location: 0xbffa0528  VALUE:   22
+                          location: 0xbffa0524  garbage or float? 
+                          location: 0xbffa0520  garbage or float? 
+                          location: 0xbffa051c  garbage or float? 
+-----------------------------------------
+RECURSE  0.80% change
+  x-pos   y-pos   ft/min  min/mile
+      0      75        0       N/A
+     36      68      517     10:12
+     80      53      656      8:02
+    130      35      750      7:02
+    173      15      669      7:53
+    210       0      563      9:22
+recurive filter stack
+-----------------------------------------
+                          location: 0xbffa0700  garbage or float? 
+                          location: 0xbffa06fc  VALUE:   0
+                          location: 0xbffa06f8  VALUE:   6
+                          location: 0xbffa06f4  POINTER: 0xbffa0710
+                          location: 0xbffa06f0  POINTER: 0xbffa0760
+           return address location: 0xbffa06ec  CODE: 0x622b7
+FUNCTION RECURSIVE_FILTER location: 0xbffa06e8  POINTER: 0xbffa09c8
+                          location: 0xbffa06e4  VALUE:   10
+                          location: 0xbffa06e0  POINTER: 0xbffa0710
+                          location: 0xbffa06dc  garbage or float? 
+                          location: 0xbffa06d8  garbage or float? 
+                          location: 0xbffa06d4  POINTER: 0xbffa0620  ----> tmp[0]
+                          location: 0xbffa06d0  garbage or float? 
+                          location: 0xbffa06cc  garbage or float? 
+                          location: 0xbffa06c8  POINTER: 0xbffa06f8
+                          location: 0xbffa06c4  garbage or float? 
+                          location: 0xbffa06c0  POINTER: 0xbffa0710
+                          location: 0xbffa06bc  VALUE:   0
+                          location: 0xbffa06b8  VALUE:   0
+                          location: 0xbffa06b4  garbage or float? 
+                          location: 0xbffa06b0  garbage or float? 
+                          location: 0xbffa06ac  POINTER: 0xbffa06b0
+                          location: 0xbffa06a8  VALUE:   93
+                          location: 0xbffa06a4  garbage or float? 
+                          location: 0xbffa06a0  garbage or float? 
+                          location: 0xbffa069c  garbage or float? 
+                          location: 0xbffa0698  VALUE:   0
+                          location: 0xbffa0694  garbage or float? 
+                          location: 0xbffa0690  garbage or float? 
+                          location: 0xbffa068c  garbage or float? 
+                          location: 0xbffa0688  garbage or float? 
+                          location: 0xbffa0684  POINTER: 0xbffa06b0
+                          location: 0xbffa0680  garbage or float? 
+                          location: 0xbffa067c  VALUE:   25
+                          location: 0xbffa0678  garbage or float? 
+                          location: 0xbffa0674  garbage or float? 
+                          location: 0xbffa0670  garbage or float? 
+                          location: 0xbffa066c  garbage or float? 
+                          location: 0xbffa0668  POINTER: 0xbffa0678
+                          location: 0xbffa0664  VALUE:   473
+                          location: 0xbffa0660  VALUE:   0
+                 tmp[n-1] location: 0xbffa065c  VALUE:   210
+                          location: 0xbffa0658  VALUE:   736
+                          location: 0xbffa0654  VALUE:   15
+                          location: 0xbffa0650  VALUE:   180
+                          location: 0xbffa064c  VALUE:   823
+                          location: 0xbffa0648  VALUE:   30
+                          location: 0xbffa0644  VALUE:   130
+                          location: 0xbffa0640  VALUE:   719
+                          location: 0xbffa063c  VALUE:   60
+                          location: 0xbffa0638  VALUE:   80
+                          location: 0xbffa0634  VALUE:   429
+                          location: 0xbffa0630  VALUE:   70
+                          location: 0xbffa062c  VALUE:   30
+                          location: 0xbffa0628  VALUE:   0
+                          location: 0xbffa0624  VALUE:   75
+                   tmp[0] location: 0xbffa0620  VALUE:   0
+                          location: 0xbffa061c  garbage or float? 
+                          location: 0xbffa0618  VALUE:   8
+                          location: 0xbffa0614  VALUE:   6
+                          location: 0xbffa0610  garbage or float? 
+                          location: 0xbffa060c  VALUE:   0
+                          location: 0xbffa0608  VALUE:   6
+                          location: 0xbffa0604  POINTER: 0xbffa0710
+                          location: 0xbffa0600  POINTER: 0xbffa0620  ----> tmp[0]
+           return address location: 0xbffa05fc  CODE: 0x61c60
+FUNCTION RECURSIVE_FILTER location: 0xbffa05f8  POINTER: 0xbffa06e8  ----> FUNCTION RECURSIVE_FILTER
+                          location: 0xbffa05f4  POINTER: 0xbffa0620  ----> tmp[0]
+                          location: 0xbffa05f0  POINTER: 0xbffa0710
+                          location: 0xbffa05ec  VALUE:   6
+                          location: 0xbffa05e8  garbage or float? 
+                          location: 0xbffa05e4  POINTER: 0xbffa0530  ----> tmp[0]
+                          location: 0xbffa05e0  garbage or float? 
+                          location: 0xbffa05dc  garbage or float? 
+                          location: 0xbffa05d8  VALUE:   8
+                          location: 0xbffa05d4  VALUE:   10
+                          location: 0xbffa05d0  garbage or float? 
+                          location: 0xbffa05cc  VALUE:   0
+                          location: 0xbffa05c8  VALUE:   0
+                          location: 0xbffa05c4  garbage or float? 
+                          location: 0xbffa05c0  garbage or float? 
+                          location: 0xbffa05bc  POINTER: 0xbffa0664
+                          location: 0xbffa05b8  VALUE:   93
+                          location: 0xbffa05b4  garbage or float? 
+                          location: 0xbffa05b0  garbage or float? 
+                          location: 0xbffa05ac  garbage or float? 
+                          location: 0xbffa05a8  VALUE:   0
+                          location: 0xbffa05a4  garbage or float? 
+                          location: 0xbffa05a0  garbage or float? 
+                          location: 0xbffa059c  garbage or float? 
+                          location: 0xbffa0598  garbage or float? 
+                          location: 0xbffa0594  garbage or float? 
+                          location: 0xbffa0590  garbage or float? 
+                          location: 0xbffa058c  VALUE:   25
+                          location: 0xbffa0588  garbage or float? 
+                          location: 0xbffa0584  garbage or float? 
+                          location: 0xbffa0580  garbage or float? 
+                          location: 0xbffa057c  garbage or float? 
+                          location: 0xbffa0578  POINTER: 0xbffa0588
+                          location: 0xbffa0574  VALUE:   563
+                          location: 0xbffa0570  VALUE:   0
+                 tmp[n-1] location: 0xbffa056c  VALUE:   210
+                          location: 0xbffa0568  VALUE:   669
+                          location: 0xbffa0564  VALUE:   15
+                          location: 0xbffa0560  VALUE:   173
+                          location: 0xbffa055c  VALUE:   750
+                          location: 0xbffa0558  VALUE:   35
+                          location: 0xbffa0554  VALUE:   130
+                          location: 0xbffa0550  VALUE:   656
+                          location: 0xbffa054c  VALUE:   53
+                          location: 0xbffa0548  VALUE:   80
+                          location: 0xbffa0544  VALUE:   517
+                          location: 0xbffa0540  VALUE:   68
+                          location: 0xbffa053c  VALUE:   36
+                          location: 0xbffa0538  VALUE:   0
+                          location: 0xbffa0534  VALUE:   75
+                   tmp[0] location: 0xbffa0530  VALUE:   0
+                          location: 0xbffa052c  garbage or float? 
+                          location: 0xbffa0528  VALUE:   8
+                          location: 0xbffa0524  VALUE:   6
+                          location: 0xbffa0520  garbage or float? 
+                          location: 0xbffa051c  VALUE:   0
+                          location: 0xbffa0518  VALUE:   6
+                          location: 0xbffa0514  POINTER: 0xbffa0710
+                          location: 0xbffa0510  POINTER: 0xbffa0530  ----> tmp[0]
+           return address location: 0xbffa050c  CODE: 0x61c60
+FUNCTION RECURSIVE_FILTER location: 0xbffa0508  POINTER: 0xbffa05f8  ----> FUNCTION RECURSIVE_FILTER
+                          location: 0xbffa0504  POINTER: 0xbffa0530  ----> tmp[0]
+                          location: 0xbffa0500  POINTER: 0xbffa0710
+                          location: 0xbffa04fc  VALUE:   6
+                          location: 0xbffa04f8  garbage or float? 
+                          location: 0xbffa04f4  POINTER: 0xbffa047c  ----> tmp[n-1]
+                          location: 0xbffa04f0  garbage or float? 
+                          location: 0xbffa04ec  garbage or float? 
+                          location: 0xbffa04e8  VALUE:   8
+                          location: 0xbffa04e4  VALUE:   10
+                          location: 0xbffa04e0  garbage or float? 
+                          location: 0xbffa04dc  garbage or float? 
+                          location: 0xbffa04d8  POINTER: 0xbffa0518
+                          location: 0xbffa04d4  garbage or float? 
+                          location: 0xbffa04d0  garbage or float? 
+                          location: 0xbffa04cc  POINTER: 0xbffa0574
+                          location: 0xbffa04c8  VALUE:   93
+                          location: 0xbffa04c4  garbage or float? 
+                          location: 0xbffa04c0  garbage or float? 
+                          location: 0xbffa04bc  garbage or float? 
+                          location: 0xbffa04b8  VALUE:   0
+                          location: 0xbffa04b4  garbage or float? 
+                          location: 0xbffa04b0  garbage or float? 
+                          location: 0xbffa04ac  garbage or float? 
+                          location: 0xbffa04a8  garbage or float? 
+                          location: 0xbffa04a4  garbage or float? 
+                          location: 0xbffa04a0  garbage or float? 
+                          location: 0xbffa049c  VALUE:   25
+                          location: 0xbffa0498  VALUE:   33
+                          location: 0xbffa0494  VALUE:   0
+                          location: 0xbffa0490  VALUE:   0
+                          location: 0xbffa048c  garbage or float? 
+                          location: 0xbffa0488  POINTER: 0xbffa0498
+                          location: 0xbffa0484  VALUE:   0
+                          location: 0xbffa0480  VALUE:   0
+                 tmp[n-1] location: 0xbffa047c  VALUE:   0
+                          location: 0xbffa0478  VALUE:   0
+                          location: 0xbffa0474  VALUE:   0
+                          location: 0xbffa0470  VALUE:   0
+                          location: 0xbffa046c  VALUE:   0
+                          location: 0xbffa0468  VALUE:   0
+                          location: 0xbffa0464  VALUE:   0
+                          location: 0xbffa0460  VALUE:   0
+                          location: 0xbffa045c  VALUE:   0
+                          location: 0xbffa0458  VALUE:   0
+                          location: 0xbffa0454  VALUE:   0
+                          location: 0xbffa0450  VALUE:   0
+                          location: 0xbffa044c  VALUE:   0
+                          location: 0xbffa0448  VALUE:   0
+                          location: 0xbffa0444  VALUE:   0
+                   tmp[0] location: 0xbffa0440  VALUE:   0
+                          location: 0xbffa043c  garbage or float? 
+                          location: 0xbffa0438  VALUE:   22
+                          location: 0xbffa0434  garbage or float? 
+                          location: 0xbffa0430  garbage or float? 
+                          location: 0xbffa042c  garbage or float? 
+-----------------------------------------
+RECURSE  0.14% change

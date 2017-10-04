@@ -1,3 +1,4 @@
+#include <iomanip>
 #ifndef Vec_h_
 #define Vec_h_
 // Simple implementation of the vector class, revised from Koenig and Moo.  This 
@@ -35,6 +36,9 @@ public:
   const_iterator begin() const { return m_data; }
   iterator end() { return m_data + m_size; }
   const_iterator end() const { return m_data + m_size; }
+
+  // printing
+  void print();
 
 private:  
   // PRIVATE MEMBER FUNCTIONS
@@ -113,6 +117,20 @@ template <class T> typename Vec<T>::iterator Vec<T>::erase(iterator p) {
   for (iterator q = p; q < m_data+m_size-1; ++q)
     *q = *(q+1);
   m_size --;
+  
+  if ( m_size < m_alloc/2 || m_size == 0) {
+    m_alloc = m_alloc/2;
+    if (m_size == 0) m_alloc = 0;
+    T* new_data = new T[ m_alloc];
+    for (size_type i = 0; i < m_size; ++i) {
+      new_data[i] = m_data[i];
+    }
+
+    // delete old
+    delete [] m_data;
+    m_data = new_data;
+  }
+  
   return p;
 }
 
@@ -139,4 +157,44 @@ template <class T> void Vec<T>::resize(size_type n, const T& fill_in_value) {
     m_size = n;
   }
 }
+
+// print the private member variables of the vector
+template <class T> void Vec<T>::print() {
+  cout << "\nVector Information:\n";
+  cout << setw(11) << "m_data: " << this->m_data << endl;
+  cout << setw(11) << "m_size: " << this->m_size << endl;
+  cout << setw(11) << "m_alloc: " << this->m_alloc << endl;
+  cout << "Vector Contents:\n";
+  for (unsigned int i = 0; i < m_size; i++) {
+    if (i != m_size-1 && (i+1)%10 != 0) {
+      cout << m_data[i] << ", ";
+    } else if ( (i+1)%10 == 0 ) {
+      cout << m_data[i] << ", " << endl;
+    } else {
+      cout << m_data[i] << endl;
+    }
+  }
+  cout << endl;
+}
+
+
+template <class T> int remove_matching_elements(Vec<T> &v, const T& element) {
+  int count = 0;
+  // goes through whole vector once, so O(n) right off the bat
+  for (unsigned int i = 0; i < v.size(); i++) {
+    // if it finds the element, it goes to erase, which starts from the location
+    // of the removed element and moves everything over one, to the end of the
+    // vector. that makes this part O(n-m) where n is the size of the vector
+    // and m is the index of the element. it does this e times, e being the
+    // number of times the element appears in the vector
+    if (v[i] == element) {
+      v.erase(&v[i]);
+      count++;
+      i -= 1;
+    }
+  }
+  // so that makes the order O(n*en)
+  return count;
+}
+
 #endif

@@ -1,0 +1,94 @@
+stack before distance runs
+-----------------------------------------
+                    location: 0xbff847e8  POINTER: 0xbff847d0
+                    location: 0xbff847e4  garbage or float? 
+                    location: 0xbff847e0  VALUE:   0
+                    location: 0xbff847dc  VALUE:   0
+                    location: 0xbff847d8  VALUE:   0
+avg_feet_per_minute location: 0xbff847d4  VALUE:   0
+                    location: 0xbff847d0  VALUE:   0
+                    location: 0xbff847cc  garbage or float? 
+                    location: 0xbff847c8  VALUE:   0
+                    location: 0xbff847c4  VALUE:   0
+                    location: 0xbff847c0  VALUE:   0
+                    location: 0xbff847bc  VALUE:   210
+                    location: 0xbff847b8  VALUE:   0
+                    location: 0xbff847b4  VALUE:   0
+                    location: 0xbff847b0  VALUE:   180
+                    location: 0xbff847ac  VALUE:   0
+                    location: 0xbff847a8  VALUE:   45
+                    location: 0xbff847a4  VALUE:   150
+                    location: 0xbff847a0  VALUE:   0
+                    location: 0xbff8479c  VALUE:   45
+                    location: 0xbff84798  VALUE:   60
+                    location: 0xbff84794  VALUE:   0
+                    location: 0xbff84790  VALUE:   90
+                    location: 0xbff8478c  VALUE:   30
+                    location: 0xbff84788  VALUE:   0
+                    location: 0xbff84784  VALUE:   75
+            data[0] location: 0xbff84780  VALUE:   0
+                    location: 0xbff8477c  POINTER: 0xbff84964
+                    location: 0xbff84778  POINTER: 0xbff847d4  ----> avg_feet_per_minute
+                    location: 0xbff84774  VALUE:   6
+                    location: 0xbff84770  POINTER: 0xbff84780  ----> data[0]
+     return address location: 0xbff8476c  CODE: 0x7e300
+  FUNCTION DISTANCE location: 0xbff84768  POINTER: 0xbff849c8
+                    location: 0xbff84764  VALUE:   6
+                    location: 0xbff84760  VALUE:   0
+                    location: 0xbff8475c  VALUE:   210
+                    location: 0xbff84758  garbage or float? 
+                    location: 0xbff84754  garbage or float? 
+                  n location: 0xbff84750  VALUE:   6
+                    location: 0xbff8474c  garbage or float? 
+                    location: 0xbff84748  POINTER: 0xbff84768  ----> FUNCTION DISTANCE
+                    location: 0xbff84744  VALUE:   6
+                    location: 0xbff84740  garbage or float? 
+                    location: 0xbff8473c  VALUE:   19
+-----------------------------------------
+stack after distance runs
+-----------------------------------------
+                    location: 0xbff847e8  POINTER: 0xbff847d0
+                    location: 0xbff847e4  garbage or float? 
+                    location: 0xbff847e0  VALUE:   0
+                    location: 0xbff847dc  VALUE:   0
+                    location: 0xbff847d8  VALUE:   0
+avg_feet_per_minute location: 0xbff847d4  VALUE:   738
+                    location: 0xbff847d0  VALUE:   0
+                    location: 0xbff847cc  garbage or float? 
+                    location: 0xbff847c8  VALUE:   0
+                    location: 0xbff847c4  VALUE:   423
+                    location: 0xbff847c0  VALUE:   0
+                    location: 0xbff847bc  VALUE:   210
+                    location: 0xbff847b8  VALUE:   763
+                    location: 0xbff847b4  VALUE:   0
+                    location: 0xbff847b0  VALUE:   180
+                    location: 0xbff847ac  VALUE:   1270
+                    location: 0xbff847a8  VALUE:   45
+                    location: 0xbff847a4  VALUE:   150
+                    location: 0xbff847a0  VALUE:   763
+                    location: 0xbff8479c  VALUE:   45
+                    location: 0xbff84798  VALUE:   60
+                    location: 0xbff84794  VALUE:   473
+                    location: 0xbff84790  VALUE:   90
+                    location: 0xbff8478c  VALUE:   30
+                    location: 0xbff84788  VALUE:   0
+                    location: 0xbff84784  VALUE:   75
+            data[0] location: 0xbff84780  VALUE:   0
+                    location: 0xbff8477c  POINTER: 0xbff84964
+                    location: 0xbff84778  POINTER: 0xbff847d4  ----> avg_feet_per_minute
+                    location: 0xbff84774  VALUE:   6
+                    location: 0xbff84770  POINTER: 0xbff84780  ----> data[0]
+     return address location: 0xbff8476c  CODE: 0x7e300
+  FUNCTION DISTANCE location: 0xbff84768  POINTER: 0xbff849c8
+                    location: 0xbff84764  VALUE:   6
+                    location: 0xbff84760  VALUE:   0
+                    location: 0xbff8475c  VALUE:   210
+                    location: 0xbff84758  garbage or float? 
+                    location: 0xbff84754  garbage or float? 
+                  n location: 0xbff84750  VALUE:   6
+                    location: 0xbff8474c  garbage or float? 
+                    location: 0xbff84748  VALUE:   6
+                    location: 0xbff84744  VALUE:   6
+                    location: 0xbff84740  garbage or float? 
+                    location: 0xbff8473c  VALUE:   19
+-----------------------------------------

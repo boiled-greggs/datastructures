@@ -50,9 +50,9 @@ void print_pace(intptr_t avg_speed) {
     std::cout << "N/A";
   } else {
     std::stringstream pace_out;
-    double pace = 1/double(avg_speed)*feet_per_mile;
-    intptr_t min = intptr_t(pace);
-    intptr_t sec = intptr_t((pace - intptr_t(pace))*60);
+    double pace = 1/double(avg_speed)*feet_per_mile; // convert
+    intptr_t min = intptr_t(pace); // rounds down so this is the minutes of the pace
+    intptr_t sec = intptr_t((pace - intptr_t(pace))*60); // subtract minutes from total pace and convert
     pace_out << min << ":" << std::setfill('0') << std::setw(2) << sec;
     std::cout << pace_out.str();
   }
@@ -69,6 +69,9 @@ void print(GPSData data[], intptr_t n) {
 
 
 double distance(GPSData data[], intptr_t n, intptr_t &avg_feet_per_minute) {
+  // uses pythagorean thm to get distance for each of path, then finds speed by using
+  // the time between samples. then, finds average speed from total distance and
+  // returns total distance.
   data[0].set_speed(0);
   double total_distance = 0;
   for (intptr_t i = 1; i < n; i++) {
@@ -81,6 +84,10 @@ double distance(GPSData data[], intptr_t n, intptr_t &avg_feet_per_minute) {
 }
 
 double filter(GPSData input[], GPSData output[], intptr_t n) {
+  // sets initial and final data objects, then loops through the rest to find
+  // the averaged new positions from input[], which are then set in output.
+  // finally, sends both to distance to get new and old pathlength, then
+  // uses results to get the percent change.
   output[0].set_position(input[0].get_x(), input[0].get_y());
   output[0].set_speed(input[0].get_s());
   output[n-1].set_position(input[n-1].get_x(), input[n-1].get_y());
@@ -164,6 +171,7 @@ int main(int argc, char** argv) {
   }
   std::cout << "-----------------------------------" << std::endl;
   thestack.set_label((intptr_t*)&input[0], "input[0]");
+  thestack.set_label((intptr_t*)&input[count], "input[count]");
   std::cout << "STACK BEFORE FUNCTION DISTANCE\n";
   thestack.print();
   intptr_t original_avg_speed;
@@ -172,7 +180,7 @@ int main(int argc, char** argv) {
   thestack.print();
   std::cout << "PRINTED STACK\n-----------------------------" << std::endl;
   std::cout << "ORIGINAL" << std::endl;
-  print(input,count);
+//  print(input,count);
 
 
   // Prepare arrays for the filter data.
@@ -191,7 +199,7 @@ int main(int argc, char** argv) {
   double filtered_distance = distance(filtered,count,filtered_avg_speed) / double (feet_per_mile);
   std::cout << "PRINTED STACK\n-----------------------------" << std::endl;
   std::cout << "FILTERED" << std::endl;
-  print(filtered,count);
+//  print(filtered,count);
 
   
   // Perform multiple passes of filtering (until the distance changes by less than the target percentage).
