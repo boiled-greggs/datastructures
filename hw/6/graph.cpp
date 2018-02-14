@@ -76,9 +76,10 @@ void Graph::addEdge(const Point &a, const Point &b) {
 // on the ~computatationally expensive~ side of things but at least
 // you don't have to do it over and over again later now
 void Graph::addNeighbors() {
+  edges_left = 0;
+  int total_left = 0;
   for (int i = 0; i < nodes.size(); ++i) {
-    total_edges += nodes[i].get_num_paths();
-    edges_left = total_edges;
+    total_left += nodes[i].num_left;
     int x = nodes[i].pt.x; int y = nodes[i].pt.y;
     int up_dist, down_dist, left_dist, right_dist;
     up_dist = down_dist = max_y;
@@ -88,9 +89,11 @@ void Graph::addNeighbors() {
       if ( nodes[j].pt.y == y ) {
         if ( nodes[j].pt.x < x && abs(x-nodes[j].pt.x) <= left_dist ) {
           nodes[i].left = &nodes[j];
+          nodes[i].left_ind = j;
           left_dist = abs(x - nodes[j].pt.x);
         } else if ( nodes[j].pt.x > x && abs(x-nodes[j].pt.x) <= right_dist ) {
           nodes[i].right = &nodes[j];
+          nodes[i].right_ind = j;
           right_dist = abs(x-nodes[j].pt.x);
         }
       } 
@@ -98,32 +101,91 @@ void Graph::addNeighbors() {
       else if ( nodes[j].pt.x == x ) {
         if ( nodes[j].pt.y < y && abs(y-nodes[j].pt.y) <= down_dist ) {
           nodes[i].down = &nodes[j];
+          nodes[i].down_ind = j;
           down_dist = abs(y-nodes[j].pt.y);
         } else if ( nodes[j].pt.y > y && abs(y-nodes[j].pt.y) <= up_dist ) {
           nodes[i].up = &nodes[j];
+          nodes[i].up_ind = j;
           up_dist = abs(y-nodes[j].pt.y);
         }
       }
     }
   }
+  // need to keep track of this for each new copy
+  edges_left = total_left/2;
 }
 
-void Graph::print_nay() {
-  std::cout << nodes[0].pt.x << ", " << nodes[0].pt.y << ": " << nodes[0].get_num_paths() << std::endl;
-  std::cout << nodes[0].up->pt.x << ", " << nodes[0].up->pt.y << std::endl;
-  std::cout << std::endl;
-}
 
-void Graph::solve(std::vector<Graph> &solutions, Node n, int i) {
-  solutions.push_back(this);
+// solve
+// recursively go through nodes of the Graph, checking if bridges are possible
+// in each direction, and then adding edges, changing values, and calling again
+// until there are no edges left. when there are no bridges left to add, 
+// the current copy is a solution and thus is added to solutions.
+bool Graph::solve(std::vector<Graph> &solutions, Node n, int i, Graph scratch) {
   // base case for no edges left to add
-  if (edges_left == 0) {
-    this = solutions[i];
-  } 
+  if (scratch.edges_left == 0) {
+    solutions.push_back(scratch);
+    return true;
+  } else if (n.num_left > 0) {
+    if (n.up != NULL) {
+      if (n.up->num_left > 0) {
+        scratch.addNeighbors();
+        scratch.addEdge(scratch.nodes[i].pt, scratch.nodes[i].up->pt);
+        scratch.nodes[i].num_left--; scratch.nodes[i].up->num_left--;
+        scratch.edges_left--;
+        int k = scratch.nodes[i].up_ind;
+        if ( solve(solutions, scratch.nodes[k], k, scratch) ) return true;
+      }
+    }
+    if (n.down != NULL) {
+      if (n.down->num_left > 0) {
+        scratch.addNeighbors();
+        scratch.addEdge(scratch.nodes[i].pt, scratch.nodes[i].down->pt);
+        scratch.nodes[i].num_left--; scratch.nodes[i].down->num_left--;
+        scratch.edges_left--;
+        int k = scratch.nodes[i].down_ind;
+        if ( solve(solutions, scratch.nodes[k], k, scratch) ) return true;
+      }
+    }
+    if (n.left != NULL) {
+      if (n.left->num_left > 0) {
+        scratch.addNeighbors();
+        scratch.addEdge(scratch.nodes[i].pt, scratch.nodes[i].left->pt);
+        scratch.nodes[i].num_left--; scratch.nodes[i].left->num_left--;
+        scratch.edges_left--;
+        int k = scratch.nodes[i].left_ind;
+        if ( solve(solutions, scratch.nodes[k], k, scratch) ) return true;
+      }
+    }
+    if (n.right != NULL) {
+      if (n.right->num_left > 0) {
+        scratch.addNeighbors();
+        scratch.addEdge(scratch.nodes[i].pt, scratch.nodes[i].right->pt);
+        scratch.nodes[i].num_left--; scratch.nodes[i].right->num_left--;
+        scratch.edges_left--;
+        int k = scratch.nodes[i].right_ind;
+        if ( solve(solutions, scratch.nodes[k], k, scratch) ) return true;
+      }
+    }
+  } else {
+    bool found = false;
+    int k = -1;
+    while (!found) {
+      ++k;
+      if (scratch.nodes[k].num_left > 0) found = true;
+    }
+    if ( solve(solutions, scratch.nodes[k], k, scratch) ) return true;
+    else return (solve(solutions, scratch.nodes[k+1], k+1, scratch));
+  }
+  return false;
 }
 
+// driver
 void Graph::solve(std::vector<Graph> &solutions) {
-  solve(solutions, nodes[0], 0);
+  for (int i = 0; i < nodes.size(); ++i) {
+    Graph scratch(*this);
+    solve(solutions, scratch.nodes[i], i, scratch);
+  }
 }
 
 void Graph::printSolution() const {

@@ -1,0 +1,34 @@
+What happens:
+  parse_arguments()
+
+  make vector of Image<int> objects with size of the filenames vector
+    (all the images to compare)
+    .Load the images
+
+  Loop over images, compare to every other image
+  for (file in filenames)
+    Image<Color> out
+    InitializeOutputFile(current_file, out)
+    for (file in filenames)
+      vector<pair<BoundingBox, BoundingBox> > regions
+      if method is simple
+        SimpleCompare
+      if method is hashtable
+        implement this
+      DrawBoundingBox for every regions in regions
+
+
+SimpleCompare(images[a],images[b],out,which_color,seed,percent,regions)
+find a seed that matches first:
+  loops over all pixels in images a and b, looking for matching areas the size of seed x seed
+  if it finds a match
+    HighlightSeed(out, which_color, Point(i,j), seed);
+  if it didn't find a match then the function is done!
+  if it did, then sets width and height to seed, then have to expand area till no more
+
+
+
+  BoundingBox bba
+  BoundingBox bbb
+  add pair(bba,bbb) to regions vector
+  get the percent of matching pixels

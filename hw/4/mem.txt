@@ -1,0 +1,276 @@
+STARTS UNPACKED
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 6
+  counts:  0 3 0 2 0 0 1
+  values:    a   d     f
+             b   e      
+             c          
+
+CONVERT TO PACKED
+packed JaggedArray
+  num_bins: 7
+  num_elements: 6
+  offsets:  0 0 3 3 5 5 5
+  values:  a b c d e f
+
+CONVERT BACK TO UNPACKED
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 6
+  counts:  0 3 0 2 0 0 1
+  values:    a   d     f
+             b   e      
+             c          
+
+ADDED G
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 7
+  counts:  0 3 0 3 0 0 1
+  values:    a   d     f
+             b   e      
+             c   g      
+
+REMOVED B
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 6
+  counts:  0 2 0 3 0 0 1
+  values:    a   d     f
+             c   e      
+                 g      
+
+CLEARED
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 0
+  counts:  0 0 0 0 0 0 0
+  values: 
+Simple test completed.
+--------------------
+Stud Test 1: assign new array w OG array
+--------------------
+
+Assigned array:
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 6
+  counts:  0 3 0 2 0 0 1
+  values:    a   d     f
+             b   e      
+             c          
+
+--------------------
+Stud Test 2: copy OG array to new array
+--------------------
+
+Copied Array:
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 6
+  counts:  0 3 0 2 0 0 1
+  values:    a   d     f
+             b   e      
+             c          
+
+--------------------
+Stud Test 3: JaggedArray of ints
+--------------------
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 12
+  counts:  1 1 2 3 4 1 0
+  values:  0 1 2 3 4 5  
+               2 3 4    
+                 3 4    
+                   4    
+
+packed JaggedArray
+  num_bins: 7
+  num_elements: 12
+  offsets:  0 1 2 4 7 11 12
+  values:  0 1 2 2 3 3 3 4 4 4 4 5
+
+--------------------
+Stud Test 4: JaggedArray of floats
+--------------------
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 11
+  counts:  0 3 0 2 5 0 1
+  values:    1.1   4.4 5.6   6.6
+             2.2   5.5 5.7    
+             3.3     5.8    
+                   5.9    
+                   6.1    
+
+packed JaggedArray
+  num_bins: 7
+  num_elements: 11
+  offsets:  0 0 3 3 5 10 10
+  values:  1.1 2.2 3.3 4.4 5.5 5.6 5.7 5.8 5.9 6.1 6.6
+
+--------------------
+Stud Test 5: JaggedArray of strings
+--------------------
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 9
+  counts:  0 3 1 2 0 2 1
+  values:    hi ug ba   wo ma
+             yo   pa   lo  
+             sa          
+
+last element in packed array: ma
+whole packed array
+packed JaggedArray
+  num_bins: 7
+  num_elements: 9
+  offsets:  0 0 3 4 6 6 8
+  values:  hi yo sa ug ba pa wo lo ma
+
+--------------------
+Stud Test 6: Empty JaggedArray
+--------------------
+packed JaggedArray
+  num_bins: 0
+  num_elements: 0
+  offsets: 
+  values: 
+
+Already Packed!
+packed JaggedArray
+  num_bins: 0
+  num_elements: 0
+  offsets: 
+  values: 
+
+unpacked JaggedArray
+  num_bins: 0
+  num_elements: 0
+  counts: 
+  values: 
+--------------------
+Stud Test 7: Remove first and element
+--------------------
+original
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 9
+  counts:  0 3 1 2 0 2 1
+  values:    hi ug ba   wo ma
+             yo   pa   lo  
+             sa          
+
+removed
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 7
+  counts:  0 2 1 2 0 2 0
+  values:    yo ug ba   wo  
+             sa   pa   lo  
+
+--------------------
+Stud Test 8: Remove all elements
+--------------------
+before removing
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 12
+  counts:  1 3 1 2 1 0 4
+  values:  a a a a a   a
+             a   a     a
+             a         a
+                       a
+
+after removing
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 0
+  counts:  0 0 0 0 0 0 0
+  values: 
+--------------------
+Stud Test 9: Clear packed and unpacked
+--------------------
+cleared packed array
+packed JaggedArray
+  num_bins: 7
+  num_elements: 0
+  offsets:  0 0 0 0 0 0 0
+  values: 
+
+cleared unpacked array
+unpacked JaggedArray
+  num_bins: 7
+  num_elements: 0
+  counts:  0 0 0 0 0 0 0
+  values: 
+Student tests completed.
+unpacked JaggedArray
+  num_bins: 5
+  num_elements: 6
+  counts:  1 2 0 1 2
+  values:  q t   e f
+             s     o
+
+unpacked JaggedArray
+  num_bins: 5
+  num_elements: 6
+  counts:  1 2 0 1 2
+  values:  q t   e f
+             s     o
+
+copy constructor test finished
+unpacked JaggedArray
+  num_bins: 12
+  num_elements: 5
+  counts:  1 1 0 2 0 0 0 0 0 1 0 0
+  values:  e s   o           t    
+                 n                
+
+unpacked JaggedArray
+  num_bins: 5
+  num_elements: 6
+  counts:  1 2 0 1 2
+  values:  q t   e f
+             s     o
+
+assignment operator test finished
+edits happen to the correct operator test finished
+unpacked JaggedArray
+  num_bins: 3
+  num_elements: 7
+  counts:  1 2 4
+  values:  u q h
+             d b
+               i
+               o
+
+packed JaggedArray
+  num_bins: 3
+  num_elements: 7
+  offsets:  0 1 3
+  values:  u q d h b i o
+
+packed JaggedArray
+  num_bins: 3
+  num_elements: 7
+  offsets:  0 1 3
+  values:  u q d h b i o
+
+packed JaggedArray
+  num_bins: 3
+  num_elements: 7
+  offsets:  0 1 3
+  values:  u q d h b i o
+
+packed copy constructor tested
+packed JaggedArray
+  num_bins: 5
+  num_elements: 5
+  offsets:  0 0 2 2 3
+  values:  t s e f o
+
+packed assignment operator tested
+More tests completed.

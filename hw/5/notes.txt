@@ -1,0 +1,40 @@
+FUNCTIONS:
+  in essay:
+    size
+    num_added
+    num_removed
+
+    push_back
+    push_front
+    pop_back
+    pop_front
+
+    insert
+    erase
+
+    backup
+
+    revert
+
+    splice(begin_splice, end_splice, destination)
+
+  in iterator:
+    begin
+    end
+    backup_begin
+    backup_end
+
+    rest of operations
+
+
+TO DO:
+  [ ] Student Tests
+    [ ] copy
+    [ ] assignment
+    [ ] no elements in list
+    [ ] insert in front; insert in back; insert to empty list
+    [ ] erase lone element
+    [ ] pop_back, pop_front of one element list
+    [ ] decrement from end
+    [ ] 
+

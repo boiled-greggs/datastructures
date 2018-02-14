@@ -46,12 +46,14 @@ public:
   const Point& get_pt() const { return pt; }
   int get_num_paths() const { return num_paths; }
   
+  friend class Graph;
   Point pt;
   // public pointer nodes to make this easier
   Node* up;
   Node* down;
   Node* left;
   Node* right;
+  int up_ind, down_ind, left_ind, right_ind;
 private:
   int num_paths;
   int num_left;
@@ -69,7 +71,8 @@ public:
   void addEdge(const Point &a, const Point &b);
   void addNeighbors();
   void print_nay();
-  void solve(solutions);
+  bool solve(std::vector<Graph> &solutions, Node n, int i, Graph scratch);
+  void solve(std::vector<Graph> &solutions);
 
   // print helper functions
   void printSolution() const;

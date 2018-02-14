@@ -24,18 +24,19 @@ To Do:
   [x] amend print function for packed
 
   [ ] write errors
-    [ ] invalid bin numbers
-    [ ] modifying when packed
+    [x] invalid bin numbers
+    [x] modifying when packed
+    [x] invalid addElement, removeElement wrt bin number
     
 
   [x] write assignment operator
   [x] write copy constructor
 
   [ ] write test cases
-    [ ] floats (probs modify print function
+    [x] floats (probs modify print function)
     [x] ints
     [x] short strings
-    [ ] no elements
+    [x] no elements
     [ ] elements in every bin
     [ ] maybe check if type element added is correct?
     [ ] copying large jagged array
@@ -44,6 +45,7 @@ To Do:
     [x] adding element to nonexistent bin, removing
     [ ] getting nonexistant elements, numelementsinbin
     [ ] check on lms for more ideas
+    [ ] some NULL stuff
   
   [ ] more tests
   [x] batch test

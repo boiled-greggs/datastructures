@@ -172,8 +172,6 @@ void SimpleTest() {
   assert (ja.numElementsInBin(4) == 0);
   assert (ja.numElementsInBin(5) == 0);
   assert (ja.numElementsInBin(6) == 0);
-/*
-*/
   // note...  the JaggedArray destructor is implicitly called for the
   // variable 't' when we leave the function and it goes out of scope
 }
@@ -187,7 +185,8 @@ void StudentTests() {
   //
   // you should add your own test cases here.  
   // be sure to test jagged arrays that store types other than char
-  //   
+  //  
+  std::cout << "--------------------\nStud Test 1: assign new array w OG array\n--------------------\n";
   JaggedArray<char> ja(7);
   assert (ja.numBins() == 7);
   assert (ja.numElements() == 0);
@@ -208,28 +207,38 @@ void StudentTests() {
 
   // test assignment with unpacked array
   def = ja;
-  std::cout << "\ndef\n";
+  std::cout << "\nAssigned array:\n";
   def.print();
 
+  std::cout << "--------------------\nStud Test 2: copy OG array to new array\n--------------------\n";
   JaggedArray<char> cp(ja);
-  std::cout << "\ncp\n";
+  std::cout << "\nCopied Array:\n";
   cp.print();
   
+  std::cout << "--------------------\nStud Test 3: JaggedArray of ints\n--------------------\n";
   JaggedArray<int> ja_int(7);
   assert (ja_int.numBins() == 7);
   assert (ja_int.numElements() == 0);
   assert (ja_int.isPacked() == false);
 
   // intialize the values in the JaggedArray
+  ja_int.addElement(0,0);
   ja_int.addElement(1,1);
-  ja_int.addElement(1,2);
-  ja_int.addElement(1,3);
-  ja_int.addElement(3,4);
-  ja_int.addElement(3,5);
-  ja_int.addElement(6,6);
+  ja_int.addElement(2,2);
+  ja_int.addElement(2,2);
+  ja_int.addElement(3,3);
+  ja_int.addElement(3,3);
+  ja_int.addElement(3,3);
+  ja_int.addElement(4,4);
+  ja_int.addElement(4,4);
+  ja_int.addElement(4,4);
+  ja_int.addElement(4,4);
+  ja_int.addElement(5,5);
   
   ja_int.print();
+  ja_int.pack(); ja_int.print();
   
+  std::cout << "--------------------\nStud Test 4: JaggedArray of floats\n--------------------\n";
   JaggedArray<float> ja_float(7);
   assert (ja_float.numBins() == 7);
   assert (ja_float.numElements() == 0);
@@ -241,10 +250,17 @@ void StudentTests() {
   ja_float.addElement(1,3.3);
   ja_float.addElement(3,4.4);
   ja_float.addElement(3,5.5);
+  ja_float.addElement(4,5.6); 
+  ja_float.addElement(4,5.7); 
+  ja_float.addElement(4,5.8); 
+  ja_float.addElement(4,5.9); 
+  ja_float.addElement(4,6.1); 
   ja_float.addElement(6,6.6);
   
   ja_float.print();
+  ja_float.pack(); ja_float.print();
   
+  std::cout << "--------------------\nStud Test 5: JaggedArray of strings\n--------------------\n";
   JaggedArray<std::string> ja_str(7);
   assert (ja_str.numBins() == 7);
   assert (ja_str.numElements() == 0);
@@ -254,11 +270,74 @@ void StudentTests() {
   ja_str.addElement(1,"hi");
   ja_str.addElement(1,"yo");
   ja_str.addElement(1,"sa");
+  ja_str.addElement(2, "ug");
+  ja_str.addElement(5, "wo");
+  ja_str.addElement(5, "lo");
   ja_str.addElement(3,"ba");
   ja_str.addElement(3,"pa");
   ja_str.addElement(6,"ma");
-  
+ 
   ja_str.print();
+  ja_str.pack(); 
+  std::cout << "last element in packed array: " << ja_str.getElement(6,0) << std::endl; 
+  std::cout << "whole packed array\n"; ja_str.print();
+  
+
+  // no elements
+  std::cout << "--------------------\nStud Test 6: Empty JaggedArray\n--------------------\n";
+  JaggedArray<int> empty;
+  empty.print();
+  empty.pack();
+  empty.print();
+  empty.unpack();
+  empty.print();
+
+  std::cout << "--------------------\nStud Test 7: Remove first and element\n--------------------\n";
+  std::cout << "original\n"; ja_str.unpack();ja_str.print();
+  ja_str.removeElement(1,0); ja_str.removeElement(6,0);
+  std::cout << "removed\n"; ja_str.print();
+
+  std::cout << "--------------------\nStud Test 8: Remove all elements\n--------------------\n";
+  JaggedArray<char> remall(7);
+  remall.addElement(0,'a');
+  remall.addElement(1,'a');
+  remall.addElement(1,'a');
+  remall.addElement(1,'a');
+  remall.addElement(2,'a');
+  remall.addElement(3,'a');
+  remall.addElement(3,'a');
+  remall.addElement(4,'a');
+  remall.addElement(6,'a');
+  remall.addElement(6,'a');
+  remall.addElement(6,'a');
+  remall.addElement(6,'a');
+  std::cout << "before removing\n"; remall.print();
+  remall.removeElement(0,0);
+  remall.removeElement(1,0);
+  remall.removeElement(1,0);
+  remall.removeElement(1,0);
+  remall.removeElement(2,0);
+  remall.removeElement(3,0);
+  remall.removeElement(3,0);
+  remall.removeElement(4,0);
+  remall.removeElement(6,0);
+  remall.removeElement(6,0);
+  remall.removeElement(6,0);
+  remall.removeElement(6,0);
+  std::cout << "after removing\n"; remall.print();
+
+  std::cout << "--------------------\nStud Test 9: Clear packed and unpacked\n--------------------\n";
+  JaggedArray<char> pack_clr = ja;
+  JaggedArray<char> unpack_clr = ja;
+  pack_clr.pack();
+  pack_clr.clear();
+  std::cout << "cleared packed array\n"; pack_clr.print();
+  unpack_clr.clear();
+  std::cout << "cleared unpacked array\n"; unpack_clr.print();
+
+  std::cout << "--------------------" << std::endl;
+  
+  
 }
 
 
@@ -267,7 +346,6 @@ void StudentTests() {
 //
 void MoreTests() {
 
-  /*
   // test the copy constructor
   JaggedArray<char> a(5);
   a.addElement(1,'t');
@@ -290,9 +368,7 @@ void MoreTests() {
   }
   b.print();
   std::cout << "copy constructor test finished" << std::endl;
-  */
 
-  /*
   // test the assignment operator  
   JaggedArray<char> c(12);
   c.addElement(3,'o');
@@ -313,9 +389,7 @@ void MoreTests() {
   }
   c.print();
   std::cout << "assignment operator test finished" << std::endl;
-  */
 
-  /*
   // verify edits happen to the right object
   b.clear();
   assert (b.numElements() == 0);
@@ -330,9 +404,7 @@ void MoreTests() {
   assert (c.numElements() == a.numElements()+2);
   assert (c.numElementsInBin(3) == a.numElementsInBin(3)+1);
   std::cout << "edits happen to the correct operator test finished" << std::endl;
-  */
 
-  /*
   // test the copy constructor on a packed object
   JaggedArray<char> d(3);
   d.addElement(2,'h');
@@ -375,9 +447,7 @@ void MoreTests() {
   assert (e.getElement(2,3) == 'o');  
   e.print();
   std::cout << "packed copy constructor tested" << std::endl;
-  */
 
-  /*
   // test the assignment operator on a packed structure
   a.pack();
   assert (a.isPacked());
@@ -393,15 +463,14 @@ void MoreTests() {
   }
   b.print();
   std::cout << "packed assignment operator tested" << std::endl;
-  */
 
-  /*
   assert (a.isPacked());
   assert (b.isPacked());
   assert (!c.isPacked());
   assert (d.isPacked());
   assert (e.isPacked());
   assert (e.isPacked());
+  /*
   // on exit, this function will test both the packed (a,b,d,e,&f) and unpacked (c)
   // versions of the destructor
   */

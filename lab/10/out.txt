@@ -1,0 +1,94 @@
+Here is the tree, printed sideways.
+The indentation is proportional to the depth of the node
+so that the value stored at the root is the only value printed
+without indentation.  Also, for each node, the right subtree
+can be found above where the node is printed and indented
+relative to it
+        zebra
+    puppy
+hello
+    good-bye
+        friend
+                daddy
+            abc
+
+After inserting stuff:
+        zebra
+    puppy
+hello
+    good-bye
+        friend
+                daddy
+                    b
+            abc
+                a
+
+After erasing stuff:
+        zebra
+    puppy
+good-bye
+    daddy
+        b
+
+            15
+        14
+            13
+    12
+            11
+        10
+            9
+8
+            7
+        6
+            5
+    4
+            3
+        2
+            1
+decrement 0: 15
+decrement 1: 14
+decrement 2: 13
+decrement 3: 12
+decrement 4: 11
+decrement 5: 10
+decrement 6: 9
+decrement 7: 8
+decrement 8: 7
+decrement 9: 6
+decrement 10: 5
+decrement 11: 4
+decrement 12: 3
+decrement 13: 2
+        15
+            14
+    13
+        12
+                11
+            10
+                9
+8
+                    7
+                        6
+                5
+            4
+        3
+    2
+        1
+decrement 0: 15
+decrement 1: 14
+decrement 2: 13
+decrement 3: 12
+decrement 4: 11
+decrement 5: 10
+decrement 6: 9
+decrement 7: 8
+decrement 8: 7
+decrement 9: 6
+decrement 10: 5
+decrement 11: 4
+decrement 12: 3
+decrement 13: 2
+
+accumulation of ints: 120
+
+accumulation set 1: abcdaddyfriendgood-byehellopuppyzebra

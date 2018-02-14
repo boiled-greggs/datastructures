@@ -1,7 +1,7 @@
 #include <iostream>
 #include <list>
 
-void relerse_list(std::list<int> &l) {
+void reverse_list(std::list<int> &l) {
   std::list<int>::iterator li = l.begin();
   std::list<int>::reverse_iterator rli = l.rbegin();
   // int k = 0;
@@ -39,8 +39,8 @@ int main() {
   }
   std::cout << "Test 1: elen" << std::endl;
   print(lst1);
-  std::cout << "\nand relerse" << std::endl;
-  relerse_list(lst1);
+  std::cout << "\nand reverse" << std::endl;
+  reverse_list(lst1);
   print(lst1);
 
   std::list<int> lst2;
@@ -49,31 +49,31 @@ int main() {
   }
   std::cout << "\nTest 2: odd" << std::endl;
   print(lst2);
-  std::cout << "\nand relerse" << std::endl;
-  relerse_list(lst2);
+  std::cout << "\nand reverse" << std::endl;
+  reverse_list(lst2);
   print(lst2);
 
   std::list<int> lst3;
   std::cout << "\nTest 3: empty" << std::endl;
   print(lst3);
-  std::cout << "\nand relerse" << std::endl;
-  relerse_list(lst3);
+  std::cout << "\nand reverse" << std::endl;
+  reverse_list(lst3);
   print(lst3);
 
   std::list<int> lst4;
-  std::cout << "\nTest 4: 1 lal" << std::endl;
+  std::cout << "\nTest 4: 1 val" << std::endl;
   lst4.push_back(1);
   print(lst4);
-  std::cout << "\nand relerse" << std::endl;
-  relerse_list(lst4);
+  std::cout << "\nand reverse" << std::endl;
+  reverse_list(lst4);
   print(lst4);
 
   std::list<int> lst5;
-  std::cout << "\nTest 5: 2 lal" << std::endl;
+  std::cout << "\nTest 5: 2 val" << std::endl;
   lst5.push_back(1); lst5.push_back(2);
   print(lst5);
-  std::cout << "\nand relerse" << std::endl;
-  relerse_list(lst5);
+  std::cout << "\nand reverse" << std::endl;
+  reverse_list(lst5);
   print(lst5);
   
   std::list<int> lst6;
@@ -82,8 +82,8 @@ int main() {
   }
   std::cout << "Test 6: big elen" << std::endl;
   print(lst6);
-  std::cout << "\nand relerse" << std::endl;
-  relerse_list(lst6);
+  std::cout << "\nand reverse" << std::endl;
+  reverse_list(lst6);
   print(lst6);
   
   std::list<int> lst7;
@@ -92,7 +92,7 @@ int main() {
   }
   std::cout << "Test 7: big odd" << std::endl;
   print(lst7);
-  std::cout << "\nand relerse" << std::endl;
-  relerse_list(lst7);
+  std::cout << "\nand reverse" << std::endl;
+  reverse_list(lst7);
   print(lst7);
 }

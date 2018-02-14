@@ -11,20 +11,8 @@ template <class T> class JaggedArray {
     JaggedArray(int n) { this->create(n); }
     JaggedArray(const JaggedArray& jar) { copy(jar); }
     JaggedArray& operator=(const JaggedArray& jar);
-    ~JaggedArray() {
-      if (isPacked()) {
-        delete [] offsets;
-        delete [] packed_values;
-      }
-      else {
-        for (int i = 0; i < num_bins; ++i) {
-          delete [] unpacked_values[i];
-        }
-        delete [] unpacked_values;
-        delete [] counts;
-      }
-    }
-
+    ~JaggedArray();
+    
     // Accessors | Other Members
     int numElements() const { return num_elements; }
     int numBins() const { return num_bins; }
@@ -56,9 +44,9 @@ template <class T> class JaggedArray {
     T** unpacked_values;
     int* offsets;
     T* packed_values;
-
 };
 
+// default constructor sets everything to 0 or null
 template <class T>
 void JaggedArray<T>::create() {
   num_elements = num_bins = 0;
@@ -67,6 +55,7 @@ void JaggedArray<T>::create() {
   packed_values = NULL;
 }
 
+// constructor creates an unpacked jagged array with number of bins n
 template <class T>
 void JaggedArray<T>::create(int n) {
   num_bins = n;
@@ -82,6 +71,27 @@ void JaggedArray<T>::create(int n) {
   offsets = NULL; packed_values = NULL;
 }
 
+// destructor
+// if it's packed, free offsets and packed values
+// if unpacked, delete each array in unpacked values, then
+// delete unpacked values array and counts array
+template <class T>
+JaggedArray<T>::~JaggedArray() {
+  if (isPacked()) {
+    delete [] offsets;
+    delete [] packed_values;
+  } else {
+    for (int i = 0; i < num_bins; ++i) {
+      delete [] unpacked_values[i];
+    }
+    delete [] unpacked_values;
+    delete [] counts;
+  }
+}
+
+// assignment operator
+// checks if same object. if not, free this's memory (packed or unpacked)
+// then go to the copy constructor. finally, return the constructed array
 template <class T>
 JaggedArray<T>& JaggedArray<T>::operator=(const JaggedArray<T> &jar) {
   if (this != &jar) {
@@ -100,7 +110,11 @@ JaggedArray<T>& JaggedArray<T>::operator=(const JaggedArray<T> &jar) {
   return *this;
 }
 
-
+// copy constructor
+// set this's variable equal to copied array's
+// then if packed, copy input offsets and values to this's by allocating memory
+// then looping through, setting unnecessary things to NULL. if unpacked, do the
+// same with the counts and unpacked values copied and packed pointers set to NULL
 template <class T>
 void JaggedArray<T>::copy(const JaggedArray<T> &jar) {
   this->num_bins = jar.num_bins;
@@ -133,11 +147,17 @@ void JaggedArray<T>::copy(const JaggedArray<T> &jar) {
   }
 }
 
+// simple - Packed arrays have NULL counts and NULL unpacked values by definition
 template <class T>
 bool JaggedArray<T>::isPacked() const {
   return counts == NULL && unpacked_values == NULL;
 }
 
+// elements in bin
+// if unpacked, it's as simple as returning the values of counts at the bin no.
+// if packed, must return either the counts from offsets[bin+1]-offsets[bin],
+// or if the last offsets element, num_elements - offsets[bin]
+// error and exit if trying to reach beyond array
 template <class T>
 int JaggedArray<T>::numElementsInBin(int bin_no) const {
   if (bin_no < num_bins && bin_no >= 0) {
@@ -153,9 +173,13 @@ int JaggedArray<T>::numElementsInBin(int bin_no) const {
     std::cerr << "ERROR: Tried to access nonexistent bin!" << std::endl;
     exit(1);
   }
-
 }
 
+// get element
+// if unpacked, trivial
+// if packed, must get the index in the packed_values array from the offsets
+// formula + index given, then return that value from packed_values.
+// error and exit if you're trying to reach beyond where you're allowed
 template <class T>
 T JaggedArray<T>::getElement(int bin_no, int index) const{ 
   if (bin_no < num_bins && bin_no >= 0) {
@@ -181,13 +205,15 @@ T JaggedArray<T>::getElement(int bin_no, int index) const{
   }
 }
 
+// add element
+// makes new array of type T with size of count[bin_no] + 1
+// to hold new element. copies values from old array, then sets last
+// value of new array to added element. then frees memory of old array, and
+// sets the unpacked_value[bin_no] to new array. +1 counts[bin], +1 num elements
+// error and exit if trying to add element to bad place or 
+// if trying to add element when array is packed
 template <class T>
 void JaggedArray<T>::addElement(int bin_no, const T &element) {
-  // num elements + 1
-  // makes new array of type T with size of count of [bin_no] array + 1
-  // to hold new element. copies values from old array, then sets last
-  // value of new array to added element. then deletes old array, and
-  // sets the unpacked_value{bin_no] to new array
   if (!isPacked()) {
     if (bin_no < num_bins && bin_no >= 0) {
     if (counts[bin_no] != 0) {
@@ -215,6 +241,14 @@ void JaggedArray<T>::addElement(int bin_no, const T &element) {
   }
 }
 
+// remove element
+// allocates new array of size counts[bin_no] - 1, then 
+// copies all the values from old bin to new one, except the value
+// at the given index. then deallocates old array and assigns new
+// array to unpacked_values[bin_no]. changes counts[bin_no].
+// changes num elements.
+// error if trying to remove element when packed, and when trying
+// to remove from out of bounds
 template <class T>
 void JaggedArray<T>::removeElement(int bin_no, int index) {
   if (!isPacked()) {
@@ -237,6 +271,12 @@ void JaggedArray<T>::removeElement(int bin_no, int index) {
   }
 }
 
+// print
+// pretty self explanatory. for unpacked, must print across bins, so
+// first it finds the maximum count so it know where to stop trying
+// to print, then it print values across the bins by checking if 
+// there is a value to print (from comparing counts[bin] to integer in loop).
+// if it's packed it just prints directly with a loop.
 template <class T>
 void JaggedArray<T>::print() {
   if(!isPacked()) {
@@ -275,94 +315,115 @@ void JaggedArray<T>::print() {
     }
     std::cout << std::endl;
   }
+  std::cout << std::endl;
 }
 
-
+// pack
+// checks if it's packed first
+// allocates new arrays for offsets and packed_values, then uses counts
+// to assign the values of offsets. Then uses unpacked_values to assign
+// the values to packed_values in order.
+// finally, deallocates memory for unpacked_values and counts, then
+// sets both to NULL.
 template <class T>
 void JaggedArray<T>::pack() {
-  offsets = new int[num_bins];
-  packed_values = new T[num_elements];
-  for (int i = 0; i < num_bins; ++i) {
-    if (i == 0) {
-      offsets[i] = 0;
+  if (isPacked()) std::cout << "Already Packed!\n";
+  else {
+    offsets = new int[num_bins];
+    packed_values = new T[num_elements];
+    for (int i = 0; i < num_bins; ++i) {
+      if (i == 0) {
+        offsets[i] = 0;
+      }
+      else {
+        offsets[i] = offsets[i-1] + counts[i-1];
+      }
     }
-    else {
-      offsets[i] = offsets[i-1] + counts[i-1];
+    for (int i = 0; i < num_bins; ++i) {
+      for (int j = 0; j < counts[i]; ++j) {
+        packed_values[j+offsets[i]] = unpacked_values[i][j];
+      }
     }
-  }
-  for (int i = 0; i < num_bins; ++i) {
-    for (int j = 0; j < counts[i]; ++j) {
-      packed_values[j+offsets[i]] = unpacked_values[i][j];
+    for (int i = 0; i < num_bins; ++i) {
+      delete [] unpacked_values[i];
     }
+    delete [] unpacked_values;
+    unpacked_values = NULL;
+    delete [] counts;
+    counts = NULL;
   }
-  for (int i = 0; i < num_bins; ++i) {
-    delete [] unpacked_values[i];
-  }
-  delete [] unpacked_values;
-  unpacked_values = NULL;
-  delete [] counts;
-  counts = NULL;
 }
 
+// unpack
+// checks if it's unpacked first.
+// allocates new array for counts and new array of arrays for 
+// unpacked_values. Then, loops through the number of bins, and if
+// there are > 0 values in a bin, makes a new array in unpacked_values,
+// then assigns the values from packed_values. sets counts[bin] to the
+// right number from the offsets formula. functions slightly differently
+// for the last bin since counts[last] is num_elements - offsets[last],
+// so it handles that case differently. If the number of values in a bin
+// is 0, it sets the unpacked_values[bin] to NULL and counts[bin] to 0.
+// Finally, it deallocates the memory of offsets and packed_values.
 template <class T>
 void JaggedArray<T>::unpack() {
-  counts = new int[num_bins];
-  unpacked_values = new T*[num_bins];
-  for (int i = 0; i < num_bins; ++i) {
-    if (i != num_bins-1) {
-      if (offsets[i+1]-offsets[i] > 0) {
-        unpacked_values[i] = new T[offsets[i+1]-offsets[i]];
-        for (int j = 0; j < offsets[i+1]-offsets[i]; ++j) {
-          unpacked_values[i][j] = packed_values[j + offsets[i]];
+  if (!isPacked()) std::cout << "Already Unpacked!\n";
+  else {
+    counts = new int[num_bins];
+    unpacked_values = new T*[num_bins];
+    for (int i = 0; i < num_bins; ++i) {
+      if (i != num_bins-1) {
+        if (offsets[i+1]-offsets[i] > 0) {
+          unpacked_values[i] = new T[offsets[i+1]-offsets[i]];
+          for (int j = 0; j < offsets[i+1]-offsets[i]; ++j) {
+            unpacked_values[i][j] = packed_values[j + offsets[i]];
+          }
+          counts[i] = offsets[i+1]-offsets[i];
+        } else {
+          unpacked_values[i] = NULL;
+          counts[i] = 0;
         }
-        counts[i] = offsets[i+1]-offsets[i];
       } else {
-        unpacked_values[i] = NULL;
-        counts[i] = 0;
-      }
-    } else {
-      if (num_elements-offsets[i] > 0){
-        unpacked_values[i] = new T[num_elements - offsets[i]];
-        for (int j = 0; j < num_elements - offsets[i]; ++j) {
-          unpacked_values[i][j] = packed_values[j + offsets[i]];
+        if (num_elements-offsets[i] > 0){
+          unpacked_values[i] = new T[num_elements - offsets[i]];
+          for (int j = 0; j < num_elements - offsets[i]; ++j) {
+            unpacked_values[i][j] = packed_values[j + offsets[i]];
+          }
+          counts[i] = num_elements - offsets[i];
+        } else {
+          unpacked_values[i] = NULL;
+          counts[i] = 0;
         }
-        counts[i] = num_elements - offsets[i];
-      } else {
-        unpacked_values[i] = NULL;
-        counts[i] = 0;
       }
     }
+    delete [] offsets;
+    delete [] packed_values;
   }
-  delete [] offsets;
-  delete [] packed_values;
 }
 
+// clear
+// 0 elements. if it's unpacked, sets each unpacked_values[bin] to NULL
+// and counts all to 0. Keeps the number of bins.
+// If packed, it sets all the offsets to 0 and then frees
+// packed_values, setting it to NULL after.
 template <class T>
 void JaggedArray<T>::clear() {
   // clears out all the bins and num elements
-  for (int i = 0; i < num_bins; ++i) {
-    delete [] unpacked_values[i];
-    unpacked_values[i] = NULL;
-    counts[i] = 0;
-  }
   num_elements = 0;
+  if (!isPacked()) {
+    for (int i = 0; i < num_bins; ++i) {
+      delete [] unpacked_values[i];
+      unpacked_values[i] = NULL;
+      counts[i] = 0;
+    }
+  } else {
+    for (int i = 0; i < num_bins; ++i) {
+      offsets[i] = 0;
+    }
+    delete [] packed_values;
+    packed_values = NULL;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

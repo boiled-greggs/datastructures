@@ -1,7 +1,7 @@
 HOMEWORK 4: JAGGED ARRAY
 
 
-NAME:  < insert name >
+NAME: Greg Stewart 
 
 
 COLLABORATORS AND OTHER RESOURCES:
@@ -10,14 +10,15 @@ List the names of everyone you talked to about this assignment
 LMS, etc.), and all of the resources (books, online reference
 material, etc.) you consulted in completing this assignment.
 
-< insert collaborators / resources >
+stackexchange for a couple drmemory errors
+
 
 Remember: Your implementation for this assignment must be done on your
 own, as described in "Academic Integrity for Homework" handout.
 
 
 
-ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  < insert # hours >
+ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  10
 
 
 
@@ -28,69 +29,75 @@ e = the number of elements
 k = the number of elements in the largest bin
 
 numElements
- unpacked:
- packed:
+ unpacked: O(1)
+ packed: O(1)
 
 numBins
- unpacked:
- packed:
+ unpacked: O(1)
+ packed: O(1)
 
 numElementsInBin
- unpacked:
- packed:
+ unpacked: O(1)
+ packed: O(1)
 
 getElement
- unpacked:
- packed:
+ unpacked: O(1)
+ packed: O(1)
 
 isPacked
- unpacked:
- packed:
+ unpacked: O(1)
+ packed: O(1)
 
 clear
- unpacked:
- packed:
+ unpacked: O(bk + b)    [ ~ b*(k+1+1) ]
+ packed: O(b + e)    [ ~ b + e + 1 ]
 
 addElement
- unpacked:
- packed:
+ unpacked: O(k)   [ k + k + 1 + 1 + k + 1 ~ 3k + 3 ]
+ packed: O(1)
 
 removeElement
- unpacked:
- packed:
+ unpacked: O(k)    [ k + k + 1 + k + 1 + 1 ~ 3k + 3 ]
+ packed: O(1)
 
 pack
- unpacked:
- packed:
+ unpacked: O(bk + b + e)     [ b + e + b + b*k + b*k + b + b + 1 + 1 ~ 2bk + 4b + e ]
+ packed: O(1)
 
 unpack
- unpacked:
- packed:
+ unpacked: O(1)
+ packed: O(bk + b + e)     [ b + b + b*(k+k+1) + b + e ~ 2bk + 4b + e ]
 
 print 
- unpacked:
- packed:
+ unpacked: O(bk + b)    [ 1 + 1 + 1 + b + k*b ~ bk + b ]
+ packed: O(b + e)     [ 1 + 1 + 1 + b + e ~ b + e ]
 
 constructor w/ integer argument
- unpacked:
- packed:
+ unpacked: O(b)
+ packed: N/A (does not construct packed jagged array)
 
 copy constructor
- unpacked:
- packed:
+ unpacked: O(bk + b)      [ 1 + 1 + b + b + b + b*(k+k) + 1 + 1 ~ 2bk + 3b ]
+ packed: O(b + e)      [ 1 + 1 + b + b + e + e + 1 + 1 ~ 2b + 2e ]
 
 destructor
- unpacked:
- packed:
+ unpacked: O(bk + b)      [ b*k + b + b ~ bk + 2b ]
+ packed: O(b + e)      [ ~ b + e ]
 
 assignment operator
- unpacked:
- packed:
+ unpacked: O(bk + b)     [ b*k + b + b + copy ~ bk + 2b + O(copy) => O(bk + b + bk + b) ]
+ packed: O(b + e)     [ b + e + copy ~ b + e + O(copy) => O(b + e + b + e) ]
 
 
 
 
 MISC. COMMENTS TO GRADER:  
-(optional, please be concise!)
 
+For the order notation, I wasn't 100% sure what you wanted, so I show
+the order notation I landed on first, then in [] the rough work and
+thought process.
 
+Also, since strings and floats could vary widely in display size (length),
+their output may look strange, but following along the printed arrays one
+can see that they are in the correct bins. This is obviously not a problem
+with ints and chars.
